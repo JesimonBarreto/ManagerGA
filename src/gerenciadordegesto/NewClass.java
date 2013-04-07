@@ -8,7 +8,7 @@ package gerenciadordegesto;
  *
  * @author Geral
  */
-public class NewClass extends ReconhecendoGesto{
+public class NewClass extends Gesto{
 
     @Override
     public boolean Aconteceu(int maoDx, int maoDy, int maoDz, int maoEx, int maoEy, int maoEz, int necky, int neckz) {

@@ -10,10 +10,19 @@ import java.util.ArrayList;
  *
  * @author 20111lired0190
  */
-public abstract class ReconhecendoGesto {
+public abstract class Gesto {
 
     private String nomeClasse=null;
+    private boolean Executando=false;
 
+    public boolean isExecutando() {
+        return Executando;
+    }
+
+    public void setExecutando(boolean Executando) {
+        this.Executando = Executando;
+    }
+    
     public String getNomeClasse() {
         return nomeClasse;
     }

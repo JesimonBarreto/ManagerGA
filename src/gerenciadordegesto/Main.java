@@ -5,7 +5,6 @@
 
 package gerenciadordegesto;
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 import java.util.ArrayList;
 
 /**
@@ -22,10 +21,10 @@ public class Main {
         
         NewClass nc=new NewClass();
         nc.setNomeClasse("NewClass");
-        gerente.addReconhecedorDeGestos(nc);
+        gerente.addGestos(nc);
         
         NewClass1 nc1=new NewClass1();
-        gerente.addAction("NewClass", nc1);
+        gerente.addAcao("NewClass", nc1);
         gerente.ConcluindoAcao(0, 0, 0, 0, 0, 0, 0, 0);
     }
 
