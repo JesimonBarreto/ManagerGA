@@ -26,9 +26,6 @@ public class Main {
         NewClass1 nc1=new NewClass1();
         gerente.addAcao("NewClass", nc1);
         gerente.ConcluindoAcao(0, 0, 0, 0, 0, 0, 0, 0);
-        gerente.ConcluindoAcao(0, 0, 0, 0, 0, 0, 0, 0);
-        gerente.ConcluindoAcao(0, 0, 0, 0, 0, 0, 0, 0);
-        gerente.ConcluindoAcao(0, 0, 0, 0, 0, 0, 0, 0);
     }
 
 }
