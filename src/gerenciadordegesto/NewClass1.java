@@ -15,9 +15,5 @@ public class NewClass1 extends Acao{
         System.out.println("Aconteceu");
     }
 
-    @Override
-    public void executeArduino(ControlePorta cp) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
     
 }
