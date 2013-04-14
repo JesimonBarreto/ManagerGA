@@ -33,7 +33,7 @@ public abstract class Gesto {
         this.nomeClasse = nomeClass;
     }
 
-    public abstract void LeituraPontos(Point3D ponto1, Point3D ponto2, Point3D ponto3);
+    public abstract void LeituraPontos(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6);
 
-    public abstract boolean Aconteceu(Point3D ponto1, Point3D ponto2, Point3D ponto3);
+    public abstract boolean Aconteceu(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6);
 }

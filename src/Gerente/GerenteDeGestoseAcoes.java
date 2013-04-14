@@ -17,7 +17,8 @@ import presentation.impl.KinectMotionCapture.layers.ScreenPanel;
 public class GerenteDeGestoseAcoes {
 
     private ControlePorta cp = new ControlePorta();
-    MyscreenPanel msp = new MyscreenPanel() {};
+    MyscreenPanel msp = new MyscreenPanel() {
+    };
     private Hashtable hs = new Hashtable();
     private String objetoAExecutar = null;
     private String StringTest = null;
@@ -39,10 +40,10 @@ public class GerenteDeGestoseAcoes {
         ((Vector) hs.get(nomeClasse)).add(acao);
     }
 
-    public String DetectandoGesto(Point3D ponto1, Point3D ponto2, Point3D ponto3) {
+    public String DetectandoGesto(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
         if (!leitura) {
             for (int i = 0; i < Gestos.size(); i++) {
-                Gestos.get(i).LeituraPontos(ponto1, ponto2, ponto3);
+                Gestos.get(i).LeituraPontos(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
             }
             leitura = true;
             objetoAExecutar = null;
@@ -52,7 +53,7 @@ public class GerenteDeGestoseAcoes {
             int i = 0;
             while (i < Gestos.size() && reconhecedor == null) {
                 reconhecedor = Gestos.get(i);
-                if (!reconhecedor.Aconteceu(ponto1, ponto2, ponto3)) {
+                if (!reconhecedor.Aconteceu(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6)) {
                     reconhecedor = null;
                 } else {
                     objetoAExecutar = reconhecedor.getNomeClasse();
@@ -64,8 +65,8 @@ public class GerenteDeGestoseAcoes {
         return objetoAExecutar;
     }
 
-    public void ConcluindoAcao(Point3D ponto1, Point3D ponto2, Point3D ponto3) {
-        String chave = this.DetectandoGesto(ponto1, ponto2, ponto3);
+    public void ConcluindoAcao(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
+        String chave = this.DetectandoGesto(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
         if (chave != null && !StringTest.equals(objetoAExecutar)) {
             Vector aAcao = ((Vector) hs.get(chave));
             for (int i = 0; i < aAcao.size(); i++) {
