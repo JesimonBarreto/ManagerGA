@@ -1,17 +1,16 @@
-package gerenciadordegesto;
+package Gerente;
 
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
-
 /**
  *
- * @author 20111lired0190
+ * @author JB
  */
-public abstract class Acao {
+public abstract class AcaoVirtual extends Acao{
+
+    private char identi = 'v';
+
     public abstract void execute();
-    
 }
