@@ -8,7 +8,6 @@ import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 import java.util.ArrayList;
 import java.util.Vector;
 import org.OpenNI.Point3D;
-import presentation.impl.KinectMotionCapture.layers.ScreenPanel;
 
 /**
  *
