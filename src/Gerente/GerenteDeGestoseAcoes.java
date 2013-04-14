@@ -8,6 +8,7 @@ import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 import java.util.ArrayList;
 import java.util.Vector;
 import org.OpenNI.Point3D;
+import presentation.impl.KinectMotionCapture.layers.ScreenPanel;
 
 /**
  *
@@ -16,6 +17,7 @@ import org.OpenNI.Point3D;
 public class GerenteDeGestoseAcoes {
 
     private ControlePorta cp = new ControlePorta();
+    MyscreenPanel msp = new MyscreenPanel() {};
     private Hashtable hs = new Hashtable();
     private String objetoAExecutar = null;
     private String StringTest = null;
@@ -69,7 +71,7 @@ public class GerenteDeGestoseAcoes {
             for (int i = 0; i < aAcao.size(); i++) {
                 Acao a = (Acao) aAcao.get(i);
                 if (a.getIdenti() == 'r') {
-                    a.executeArduino(cp);
+                    a.executeArduino(cp, msp);
                 } else {
                     a.execute();
                 }

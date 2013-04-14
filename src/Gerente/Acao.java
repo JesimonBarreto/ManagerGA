@@ -23,5 +23,5 @@ public abstract class Acao {
 
     public abstract void execute();
 
-    public abstract void executeArduino(ControlePorta cp);
+    public abstract void executeArduino(ControlePorta cp, MyscreenPanel sp);
 }

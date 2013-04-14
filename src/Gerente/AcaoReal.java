@@ -12,5 +12,5 @@ public abstract class AcaoReal extends Acao{
 
     private char identi = 'r';
 
-    public abstract void executeArduino(ControlePorta cp);
+    public abstract void executeArduino(ControlePorta cp,MyscreenPanel sp);
 }

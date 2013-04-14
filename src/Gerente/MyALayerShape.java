@@ -4,6 +4,7 @@
  */
 package Gerente;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 import presentation.ALayerShape;
@@ -29,7 +30,7 @@ public abstract class MyALayerShape extends ALayerShape {
         return coordinate[i];
     }
 
-    public boolean Contein(Point ponto) {
+    public boolean Contain(Point ponto) {
         boolean contem = false;
 
         if (ponto.getX() > this.getPoint(0).x && ponto.getY() > this.getPoint(0).y) {
