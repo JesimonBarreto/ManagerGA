@@ -12,7 +12,7 @@ import presentation.ALayerShape;
 
 /**
  *
- * @author Geral
+ * @author JB
  */
 public class NewShape extends MyALayerShape {
 

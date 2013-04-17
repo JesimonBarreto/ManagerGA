@@ -13,7 +13,7 @@ import presentation.impl.KinectMotionCapture.layers.ScreenPanel;
 
 /**
  *
- * @author Geral
+ * @author JB
  */
 public abstract class MyscreenPanel extends ScreenPanel {
 

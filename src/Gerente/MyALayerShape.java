@@ -11,7 +11,7 @@ import presentation.ALayerShape;
 
 /**
  *
- * @author Geral
+ * @author JB
  */
 public abstract class MyALayerShape extends ALayerShape {
 
