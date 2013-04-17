@@ -24,6 +24,7 @@ public abstract class AcaoReal extends Acao {
         this.executando = executando;
     }
 
+    @Override
     public abstract void executeArduino(ControlePorta cp, MyscreenPanel sp);
 
     public abstract void pararAcao(ControlePorta cp);
