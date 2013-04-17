@@ -24,7 +24,7 @@ public class GestoMaoParaCima extends Gesto {
         if (ponto1.getY() < ponto2.getY()) {
             aconteceu = true;
         }
-        //retornando valor
+        //Retornando valor
         return aconteceu;
     }
 }
