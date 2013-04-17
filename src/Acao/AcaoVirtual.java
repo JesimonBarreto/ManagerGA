@@ -1,5 +1,7 @@
 package Acao;
 
+import Painel.MyscreenPanel;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -8,9 +10,10 @@ package Acao;
  *
  * @author JB
  */
-public abstract class AcaoVirtual extends Acao{
+public abstract class AcaoVirtual extends Acao {
 
     private char identi = 'v';
 
-    public abstract void execute();
+    @Override
+    public abstract void execute(MyscreenPanel sp);
 }

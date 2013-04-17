@@ -82,7 +82,7 @@ public class GerenteDeGestoseAcoes {
                         ar.executeArduino(cp, msp);
                     }
                 } else {
-                    a.execute();
+                    a.execute(msp);
                 }
             }
         } else if (chave == null) {

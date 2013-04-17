@@ -12,7 +12,7 @@ import Painel.MyscreenPanel;
  * @author JB
  */
 public abstract class Acao {
- 
+
     private char identi;
 
     public char getIdenti() {
@@ -24,7 +24,7 @@ public abstract class Acao {
 
     }
 
-    public abstract void execute();
+    public abstract void execute(MyscreenPanel sp);
 
     public abstract void executeArduino(ControlePorta cp, MyscreenPanel sp);
 }
