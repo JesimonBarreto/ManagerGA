@@ -4,9 +4,6 @@
  */
 package Acao;
 
-import Arduino.ControlePorta;
-import Painel.MyscreenPanel;
-
 /**
  *
  * @author JB
@@ -24,7 +21,6 @@ public abstract class Acao {
 
     }
 
-    public abstract void execute(MyscreenPanel sp);
+   
 
-    public abstract void executeArduino(ControlePorta cp, MyscreenPanel sp);
 }

@@ -13,8 +13,17 @@ import Painel.MyscreenPanel;
  */
 public abstract class AcaoReal extends Acao {
 
+    private boolean acaoDupla = false;
     private boolean executando = false;
     private char identi = 'r';
+
+    public boolean isAcaoDupla() {
+        return acaoDupla;
+    }
+
+    public void setAcaoDupla(boolean acaoDupla) {
+        this.acaoDupla = acaoDupla;
+    }
 
     public boolean isExecutando() {
         return executando;
@@ -24,8 +33,7 @@ public abstract class AcaoReal extends Acao {
         this.executando = executando;
     }
 
-    @Override
     public abstract void executeArduino(ControlePorta cp, MyscreenPanel sp);
 
-    public abstract void pararAcao(ControlePorta cp);
+    public abstract void pararAcao(ControlePorta cp, MyscreenPanel sp);
 }

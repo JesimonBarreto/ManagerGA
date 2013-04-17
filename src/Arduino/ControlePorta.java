@@ -41,7 +41,7 @@ public class ControlePorta {
 
     }
 
-    public void enviaDados(char opcao) {
+    public void enviarDados(char opcao) {
         try {
 
             serialOut.write(opcao);

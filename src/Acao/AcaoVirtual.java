@@ -14,6 +14,5 @@ public abstract class AcaoVirtual extends Acao {
 
     private char identi = 'v';
 
-    @Override
     public abstract void execute(MyscreenPanel sp);
 }

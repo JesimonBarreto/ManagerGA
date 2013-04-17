@@ -6,6 +6,7 @@ package Gerente;
  */
 import Acao.Acao;
 import Acao.AcaoReal;
+import Acao.AcaoVirtual;
 import Arduino.ControlePorta;
 import Painel.MyscreenPanel;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
@@ -76,13 +77,20 @@ public class GerenteDeGestoseAcoes {
                 Acao a = (Acao) aAcao.get(i);
                 if (a.getIdenti() == 'r') {
                     AcaoReal ar = (AcaoReal) a;
-                    if (ar.isExecutando()) {
-                        ar.pararAcao(cp);
-                    } else {
+                    if (ar.isExecutando() && ar.isAcaoDupla()) {
+                        ar.pararAcao(cp, msp);
+                        ((AcaoReal) aAcao.get(i)).setExecutando(false);
+                    } else if (!ar.isExecutando() && ar.isAcaoDupla()) {
+                        ar.executeArduino(cp, msp);
+                        ((AcaoReal) aAcao.get(i)).setExecutando(true);
+                    } else if (!ar.isExecutando() && !ar.isAcaoDupla()) {
                         ar.executeArduino(cp, msp);
                     }
+                } else if (a.getIdenti() == 'v') {
+                    AcaoVirtual av = (AcaoVirtual) a;
+                    av.execute(msp);
                 } else {
-                    a.execute(msp);
+                    System.out.println("Identificador não está correto");
                 }
             }
         } else if (chave == null) {
