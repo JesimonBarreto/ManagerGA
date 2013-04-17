@@ -18,7 +18,7 @@ import presentation.impl.KinectMotionCapture.layers.ScreenPanel;
 public abstract class MyscreenPanel extends ScreenPanel {
 
     Vector shapes = new Vector();
-    public BufferedImage[] imagem = new BufferedImage[10];
+    public BufferedImage[] imagem = null;
     private int shapePositionv = 0;
 
     public int setShapePositionv(int shapePosition) {

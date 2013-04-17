@@ -20,9 +20,11 @@ import org.OpenNI.Point3D;
  */
 public class GerenteDeGestoseAcoes {
 
+    public GerenteDeGestoseAcoes(MyscreenPanel msp) {
+        this.msp = msp;
+    }
     private ControlePorta cp = new ControlePorta();
-    MyscreenPanel msp = new MyscreenPanel() {
-    };
+    MyscreenPanel msp = null;
     private Hashtable hs = new Hashtable();
     private String objetoAExecutar = null;
     private String StringTest = null;

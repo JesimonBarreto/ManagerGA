@@ -21,5 +21,4 @@ public class AcaoExibirNome extends AcaoVirtual {
         //Vamos colocar como exemplo exibir 'JB'
         System.out.println("JB");
     }
-
 }
