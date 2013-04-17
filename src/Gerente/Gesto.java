@@ -12,7 +12,7 @@ import org.OpenNI.Point3D;
  */
 public abstract class Gesto {
 
-    Point3D[] ponto = new Point3D[6];
+    public Point3D[] ponto = new Point3D[6];
     private boolean executando = false;
     private String nomeClasse = null;
 

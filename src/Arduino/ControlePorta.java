@@ -1,4 +1,4 @@
-package Gerente;
+package Arduino;
 
 import gnu.io.CommPortIdentifier;
 import gnu.io.NoSuchPortException;
