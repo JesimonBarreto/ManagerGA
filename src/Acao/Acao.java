@@ -12,7 +12,7 @@ import Painel.MyscreenPanel;
  * @author JB
  */
 public abstract class Acao {
-
+ 
     private char identi;
 
     public char getIdenti() {

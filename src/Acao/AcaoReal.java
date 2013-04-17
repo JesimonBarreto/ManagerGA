@@ -11,9 +11,20 @@ import Painel.MyscreenPanel;
  *
  * @author JB
  */
-public abstract class AcaoReal extends Acao{
+public abstract class AcaoReal extends Acao {
 
+    private boolean executando = false;
     private char identi = 'r';
 
-    public abstract void executeArduino(ControlePorta cp,MyscreenPanel sp);
+    public boolean isExecutando() {
+        return executando;
+    }
+
+    public void setExecutando(boolean executando) {
+        this.executando = executando;
+    }
+
+    public abstract void executeArduino(ControlePorta cp, MyscreenPanel sp);
+
+    public abstract void pararAcao(ControlePorta cp);
 }

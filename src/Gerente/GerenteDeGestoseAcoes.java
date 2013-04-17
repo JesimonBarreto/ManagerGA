@@ -5,6 +5,7 @@ package Gerente;
  * and open the template in the editor.
  */
 import Acao.Acao;
+import Acao.AcaoReal;
 import Arduino.ControlePorta;
 import Painel.MyscreenPanel;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
@@ -74,7 +75,12 @@ public class GerenteDeGestoseAcoes {
             for (int i = 0; i < aAcao.size(); i++) {
                 Acao a = (Acao) aAcao.get(i);
                 if (a.getIdenti() == 'r') {
-                    a.executeArduino(cp, msp);
+                    AcaoReal ar = (AcaoReal) a;
+                    if (ar.isExecutando()) {
+                        ar.pararAcao(cp);
+                    } else {
+                        ar.executeArduino(cp, msp);
+                    }
                 } else {
                     a.execute();
                 }
