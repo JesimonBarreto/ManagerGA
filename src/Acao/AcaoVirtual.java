@@ -12,7 +12,9 @@ import Painel.MyscreenPanel;
  */
 public abstract class AcaoVirtual extends Acao {
 
-    private char identi = 'v';
-
     public abstract void execute(MyscreenPanel sp);
+
+    public AcaoVirtual() {
+        this.setIdenti('v');
+    }
 }

@@ -5,6 +5,7 @@
 package ExemploUso;
 
 import Gerente.GerenteDeGestoseAcoes;
+import Painel.NewShape;
 import java.awt.Graphics;
 import java.util.Vector;
 import org.OpenNI.Point3D;
@@ -30,7 +31,25 @@ public final class MyscreenPanel extends Painel.MyscreenPanel {
     //Gerente criado, e passando como parâmetro um MyscreenPanel
     GerenteDeGestoseAcoes gerente = new GerenteDeGestoseAcoes(this);
 
+    @Override
+    public void addLayerShape(ALayerShape shape) {
+        this.shapes.add(shape);
+    }
+
+    public void addMyLayerShape(NewShape myshape) {
+        this.shapes.add(myshape);
+    }
+
+    public void removerShape(int position) {
+        this.shapes.remove(position);
+    }
+
+    public void substituirShape(int posicaoShapeRemover, ALayerShape shape) {
+        this.removerShape(posicaoShapeRemover);
+        this.addLayerShape(shape);
+    }
     //Método responsável por inserir Gestos e Ações no Gerente
+
     public void inserindo() {
 
         GestoMaoParaCima mpc = new GestoMaoParaCima();
@@ -43,11 +62,11 @@ public final class MyscreenPanel extends Painel.MyscreenPanel {
         //Adicionando ao gerente. Vai precisar de doi valores para parâmetros, uma String(Nome da Classe do gesto a que a ação vai ser associada), o objeto ação
         gerente.addAcao("GestoMaoParaCima", aen);
         //Criando objeto AcaoReal
-        AcaoEnviarArduino ea = new AcaoEnviarArduino();
+        //AcaoEnviarArduino ea = new AcaoEnviarArduino();
         //Para ativar Acão dupla
         //ea.setAcaoDupla(true);
         //Adicionando ao gerente
-        gerente.addAcao("GestoMaoParaCima", ea);
+        // gerente.addAcao("GestoMaoParaCima", ea);
     }
 
 //A classe Abstrata 'MyscreenPanel'tem um método substituirShape, passando a posição do que tiver de ser removido e o novo shape como parâmetro o método faz a substituição.
@@ -79,10 +98,10 @@ public final class MyscreenPanel extends Painel.MyscreenPanel {
                 pesc = new Point3D(pescX, pescY, pescZ);
 
                 //Chamando método responsável por passar os valores para o gerente
-                gerente.ConcluindoAcao(mao, pesc, null, null, null, null);
+                gerente.ConcluindoAcao(mao, pesc, mao, pesc, mao, pesc);
 
             } catch (Exception erro) {
-                System.out.println("Erro");
+                System.out.println("Erro " + erro);
             }
 
 

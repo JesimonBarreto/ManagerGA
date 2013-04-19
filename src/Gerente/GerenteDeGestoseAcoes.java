@@ -28,6 +28,8 @@ public class GerenteDeGestoseAcoes {
     private Hashtable hs = new Hashtable();
     private String objetoAExecutar = null;
     private String StringTest = null;
+    private String StringTest2 = null;
+    private boolean cont = false;
     private boolean leitura = false;
     private ArrayList<Gesto> Gestos = new ArrayList();
 
@@ -53,10 +55,11 @@ public class GerenteDeGestoseAcoes {
             }
             leitura = true;
             objetoAExecutar = null;
+            cont = false;
         } else {
             Gesto reconhecedor = null;
-            StringTest = objetoAExecutar;
             int i = 0;
+            StringTest = StringTest2;
             while (i < Gestos.size() && reconhecedor == null) {
                 reconhecedor = Gestos.get(i);
                 if (!reconhecedor.Aconteceu(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6)) {
@@ -67,13 +70,15 @@ public class GerenteDeGestoseAcoes {
                 i++;
             }
             leitura = false;
+            cont = true;
+            StringTest2 = objetoAExecutar;
         }
         return objetoAExecutar;
     }
 
     public void ConcluindoAcao(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
         String chave = this.DetectandoGesto(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
-        if (chave != null && !StringTest.equals(objetoAExecutar)) {
+        if (chave != null && (StringTest2 == null ? StringTest != null : !StringTest2.equals(StringTest))) {
             Vector aAcao = ((Vector) hs.get(chave));
             for (int i = 0; i < aAcao.size(); i++) {
                 Acao a = (Acao) aAcao.get(i);
@@ -95,8 +100,8 @@ public class GerenteDeGestoseAcoes {
                     System.out.println("Identificador não está correto");
                 }
             }
-        } else if (chave == null) {
-            objetoAExecutar = null;
+        } else if ((StringTest2 == null ? StringTest != null : !StringTest2.equals(StringTest)) && cont) {
+            StringTest2 = null;
         }
     }
 }

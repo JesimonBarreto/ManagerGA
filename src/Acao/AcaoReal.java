@@ -15,7 +15,10 @@ public abstract class AcaoReal extends Acao {
 
     private boolean acaoDupla = false;
     private boolean executando = false;
-    private char identi = 'r';
+
+    public AcaoReal() {
+        this.setIdenti('r');
+    }
 
     public boolean isAcaoDupla() {
         return acaoDupla;
