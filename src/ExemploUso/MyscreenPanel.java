@@ -36,14 +36,17 @@ public final class MyscreenPanel extends Painel.MyscreenPanel {
         this.shapes.add(shape);
     }
 
+    @Override
     public void addMyLayerShape(NewShape myshape) {
         this.shapes.add(myshape);
     }
 
+    @Override
     public void removerShape(int position) {
         this.shapes.remove(position);
     }
 
+    @Override
     public void substituirShape(int posicaoShapeRemover, ALayerShape shape) {
         this.removerShape(posicaoShapeRemover);
         this.addLayerShape(shape);
@@ -54,7 +57,7 @@ public final class MyscreenPanel extends Painel.MyscreenPanel {
 
         GestoMaoParaCima mpc = new GestoMaoParaCima();
         //Método que vai guadar o nome da classe para armazenar as ações em conjunto
-        mpc.setNomeClasse("GestoMaoParaCima");
+        mpc.setNameClass("GestoMaoParaCima");
         //Adicionando novo gesto ao gerente
         gerente.addGestos(mpc);
         //Criando objeto AcaoVirtual

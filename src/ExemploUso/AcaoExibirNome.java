@@ -4,7 +4,7 @@
  */
 package ExemploUso;
 
-import Acao.AcaoVirtual;
+import Action.AcaoVirtual;
 import Painel.MyscreenPanel;
 
 /**
@@ -17,7 +17,7 @@ public class AcaoExibirNome extends AcaoVirtual {
     //Método 'execute' é o método de ação, qualquer ação para ser feita no proprio computador, em java mesmo, como parametro é passado 'MyscreenPanel'
     //que é do tipo 'ScreenPanel', com objetivo de facilitar a alteração de algum shape no painel, com um método 'substituirShape'.
     @Override
-    public void execute(MyscreenPanel sp) {
+    public void run(MyscreenPanel sp) {
         //Vamos colocar como exemplo exibir 'JB'
         System.out.println("JB");
     }

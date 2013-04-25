@@ -1,4 +1,4 @@
-package Acao;
+package Action;
 
 import Painel.MyscreenPanel;
 
@@ -10,11 +10,11 @@ import Painel.MyscreenPanel;
  *
  * @author JB
  */
-public abstract class AcaoVirtual extends Acao {
+public abstract class AcaoVirtual extends Action {
 
-    public abstract void execute(MyscreenPanel sp);
+    public abstract void run(MyscreenPanel sp);
 
     public AcaoVirtual() {
-        this.setIdenti('v');
+        this.setIdentification('v');
     }
 }

@@ -4,7 +4,7 @@
  */
 package ExemploUso;
 
-import Gerente.Gesto;
+import Gerente.Gesture;
 import org.OpenNI.Point3D;
 
 /**
@@ -12,7 +12,7 @@ import org.OpenNI.Point3D;
  * @author JB
  */
 //Para adicionar um novo gesto ao gerente basta extender da classe 'Gesto' e usar o método 'Aconteu' que é onde será feito todo o teste para que seu gesto seja reconhecido
-public class GestoMaoParaCima extends Gesto {
+public class GestoMaoParaCima extends Gesture {
     //Dentro da classe 'Gesto' tem um vetor de pontos 'ponto' de seis posições em 3D que é usado como pontos iniciais, automaticamente lidos pela biblioteca.
     //Os seis pontos em 3D passados como parâmetros no método são para possíveis testes com várias juntas. O método que vai inserir os valores de cada ponto e cada junta vai ser chamado no paint   
 

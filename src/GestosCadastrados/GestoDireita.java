@@ -11,7 +11,7 @@ import org.OpenNI.Point3D;
  *
  * @author JB
  */
-public class GestoDireita extends Gesto {
+public class GestoDireita extends Gesture {
 
     @Override
     public boolean Aconteceu(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
