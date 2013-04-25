@@ -1,12 +1,8 @@
 package Gerente;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-import Action.Action;
 import Action.AcaoReal;
 import Action.AcaoVirtual;
+import Action.Action;
 import Arduino.ControlePorta;
 import Painel.MyscreenPanel;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
