@@ -1,6 +1,6 @@
 package GestosCadastrados;
 
-import Gerente.Gesture;
+import Manager.Gesture;
 import org.OpenNI.Point3D;
 
 /**

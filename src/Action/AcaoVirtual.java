@@ -1,6 +1,6 @@
 package Action;
 
-import Painel.MyscreenPanel;
+import Panel.MyscreenPanel;
 /**
  *
  * @author JB

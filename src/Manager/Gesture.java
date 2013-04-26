@@ -1,4 +1,4 @@
-package Gerente;
+package Manager;
 
 import org.OpenNI.Point3D;
 
@@ -37,12 +37,12 @@ public abstract class Gesture {
     }
 
     public void startPoints(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
-        point[0].setPoint(ponto1.getX(), ponto1.getY(), ponto1.getZ());
-        point[1].setPoint(ponto2.getX(), ponto2.getY(), ponto2.getZ());
-        point[2].setPoint(ponto3.getX(), ponto3.getY(), ponto3.getZ());
-        point[3].setPoint(ponto4.getX(), ponto4.getY(), ponto4.getZ());
-        point[4].setPoint(ponto5.getX(), ponto5.getY(), ponto5.getZ());
-        point[5].setPoint(ponto6.getX(), ponto6.getY(), ponto6.getZ());
+        point[0] = ponto1;
+        point[1] = ponto2;
+        point[2] = ponto3;
+        point[3] = ponto4;
+        point[4] = ponto5;
+        point[5] = ponto6;
 
     }
 

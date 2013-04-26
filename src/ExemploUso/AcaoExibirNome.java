@@ -1,7 +1,8 @@
 package ExemploUso;
 
 import Action.AcaoVirtual;
-import Painel.MyscreenPanel;
+import Panel.MyscreenPanel;
+import java.awt.Graphics;
 
 /**
  *
@@ -15,6 +16,10 @@ public class AcaoExibirNome extends AcaoVirtual {
     @Override
     public void run(MyscreenPanel sp) {
         //Vamos colocar como exemplo exibir 'JB'
-        System.out.println("JB");
+        System.out.println("aumentando");
+        
+    }
+    public void paint(Graphics g){
+        g.drawLine(19, 455, 64, 500);
     }
 }

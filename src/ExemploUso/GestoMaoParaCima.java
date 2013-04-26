@@ -1,6 +1,6 @@
 package ExemploUso;
 
-import Gerente.Gesture;
+import Manager.Gesture;
 import org.OpenNI.Point3D;
 
 /**
@@ -17,9 +17,11 @@ public class GestoMaoParaCima extends Gesture {
         //Criando variável para retorno
         boolean aconteceu = false;
         //Condição para  que o seu gesto aconteça
-        if (ponto1.getY() < ponto2.getY()) {
-            aconteceu = true;
-        }
+        
+            if (ponto1.getY()<ponto2.getY()) {
+                aconteceu = true;
+            }
+        
         //Retornando valor
         return aconteceu;
     }

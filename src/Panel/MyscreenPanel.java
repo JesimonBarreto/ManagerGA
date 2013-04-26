@@ -1,5 +1,5 @@
 
-package Painel;
+package Panel;
 
 import java.awt.Graphics;
 import java.awt.Image;

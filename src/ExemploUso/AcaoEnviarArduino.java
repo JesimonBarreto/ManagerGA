@@ -2,7 +2,7 @@ package ExemploUso;
 
 import Action.AcaoReal;
 import Arduino.ControlePorta;
-import Painel.MyscreenPanel;
+import Panel.MyscreenPanel;
 
 /**
  *

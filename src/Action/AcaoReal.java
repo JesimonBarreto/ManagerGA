@@ -1,7 +1,7 @@
 package Action;
 
 import Arduino.ControlePorta;
-import Painel.MyscreenPanel;
+import Panel.MyscreenPanel;
 
 /**
  *

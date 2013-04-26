@@ -1,9 +1,10 @@
 package ExemploUso;
 
-import Gerente.GerenteDeGestoseAcoes;
+import Manager.GerenteDeGestoseAcoes;
 import javax.swing.JFrame;
 import org.OpenNI.Point3D;
 import presentation.ALayerShape;
+import presentation.impl.KinectMotionCapture.KinectControl.EBone;
 import presentation.impl.KinectMotionCapture.KinectControl.KinectAccess;
 import presentation.impl.KinectMotionCapture.layers.LayerRGB;
 import presentation.impl.KinectMotionCapture.layers.LayerSkeletonBone;

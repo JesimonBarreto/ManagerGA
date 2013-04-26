@@ -1,7 +1,9 @@
 package ExemploUso;
 
-import Gerente.GerenteDeGestoseAcoes;
-import Painel.NewShape;
+import GestosCadastrados.*;
+import GestosCadastrados.GestoMaosJuntas;
+import Manager.GerenteDeGestoseAcoes;
+import Panel.NewShape;
 import java.awt.Graphics;
 import java.util.Vector;
 import org.OpenNI.Point3D;
@@ -15,7 +17,7 @@ import presentation.impl.KinectMotionCapture.KinectControl.SkeletonBone;
  * @author JB
  */
 //Criando classe 'MyscreenPanel' classe onde vai ficar responsável por enviar os dados para o gerente
-public final class MyscreenPanel extends Painel.MyscreenPanel {
+public final class MyscreenPanel extends Panel.MyscreenPanel {
 
     public MyscreenPanel() {
         //Para que os gestos e as ações sejam adicionadas antes da execução
@@ -100,7 +102,6 @@ public final class MyscreenPanel extends Painel.MyscreenPanel {
                 gerente.ConcluindoAcao(mao, pesc, mao, pesc, mao, pesc);
 
             } catch (Exception erro) {
-                System.out.println("Erro " + erro);
             }
 
 

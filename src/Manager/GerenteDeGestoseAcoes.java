@@ -1,10 +1,10 @@
-package Gerente;
+package Manager;
 
 import Action.AcaoReal;
 import Action.AcaoVirtual;
 import Action.Action;
 import Arduino.ControlePorta;
-import Painel.MyscreenPanel;
+import Panel.MyscreenPanel;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 import java.util.ArrayList;
 import java.util.Vector;
