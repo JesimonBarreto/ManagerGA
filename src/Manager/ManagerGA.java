@@ -22,15 +22,15 @@ public class ManagerGA {
     private PortControl cp = new PortControl();
     MyscreenPanel msp = null;
     private Hashtable hs = new Hashtable();
-    private String objetoAExecutar = null;
-    private String StringTest = null;
-    private String StringTest2 = null;
-    private boolean cont = false;
-    private boolean leitura = false;
-    private ArrayList<Gesture> Gestos = new ArrayList();
+    private String objectExecute = null;
+    private String Stringshoot = null;
+    private String Stringshoot2 = null;
+    private boolean decision = false;
+    private boolean reading= false;
+    private ArrayList<Gesture> Gestures = new ArrayList();
 
-    public void addGestos(Gesture reconhecedor) {
-        this.Gestos.add(reconhecedor);
+    public void addGestures(Gesture reconhecedor) {
+        this.Gestures.add(reconhecedor);
         String nomeClasse = reconhecedor.getNameClass();
         Vector acoes = new Vector();
         hs.put(nomeClasse, acoes);
@@ -45,36 +45,36 @@ public class ManagerGA {
     }
 
     public String DetectandoGesto(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
-        if (!leitura) {
-            for (int i = 0; i < Gestos.size(); i++) {
-                Gestos.get(i).startPoints(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
+        if (!reading) {
+            for (int i = 0; i < Gestures.size(); i++) {
+                Gestures.get(i).startPoints(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
             }
-            leitura = true;
-            objetoAExecutar = null;
-            cont = false;
+            reading= true;
+            objectExecute = null;
+            decision = false;
         } else {
             Gesture reconhecedor = null;
             int i = 0;
-            StringTest = StringTest2;
-            while (i < Gestos.size() && reconhecedor == null) {
-                reconhecedor = Gestos.get(i);
+            Stringshoot = Stringshoot2;
+            while (i < Gestures.size() && reconhecedor == null) {
+                reconhecedor = Gestures.get(i);
                 if (!reconhecedor.happened(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6)) {
                     reconhecedor = null;
                 } else {
-                    objetoAExecutar = reconhecedor.getNameClass();
+                    objectExecute = reconhecedor.getNameClass();
                 }
                 i++;
             }
-            leitura = false;
-            cont = true;
-            StringTest2 = objetoAExecutar;
+            reading= false;
+            decision = true;
+            Stringshoot2 = objectExecute;
         }
-        return objetoAExecutar;
+        return objectExecute;
     }
 
     public void ConcluindoAcao(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
         String chave = this.DetectandoGesto(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
-        if (chave != null && (StringTest2 == null ? StringTest != null : !StringTest2.equals(StringTest))) {
+        if (chave != null && (Stringshoot2 == null ? Stringshoot != null : !Stringshoot2.equals(Stringshoot))) {
             Vector aAcao = ((Vector) hs.get(chave));
             for (int i = 0; i < aAcao.size(); i++) {
                 Action a = (Action) aAcao.get(i);
@@ -98,8 +98,8 @@ public class ManagerGA {
                     System.out.println("Identificador não está correto");
                 }
             }
-        } else if ((StringTest2 == null ? StringTest != null : !StringTest2.equals(StringTest)) && cont) {
-            StringTest2 = null;
+        } else if ((Stringshoot2 == null ? Stringshoot != null : !Stringshoot2.equals(Stringshoot)) && decision) {
+            Stringshoot2 = null;
         }
     }
 }

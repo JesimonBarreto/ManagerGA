@@ -56,7 +56,7 @@ public final class MyscreenPanel extends Panel.MyscreenPanel {
         //Método que vai guadar o nome da classe para armazenar as ações em conjunto
         mpc.setNameClass("GestoMaoParaCima");
         //Adicionando novo gesto ao gerente
-        gerente.addGestos(mpc);
+        gerente.addGestures(mpc);
         //Criando objeto AcaoVirtual
         AcaoExibirNome aen = new AcaoExibirNome();
         //Adicionando ao gerente. Vai precisar de doi valores para parâmetros, uma String(Nome da Classe do gesto a que a ação vai ser associada), o objeto ação
