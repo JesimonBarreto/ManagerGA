@@ -1,18 +1,18 @@
 package Action;
 
-import Arduino.ControlePorta;
+import Arduino.PortControl;
 import Panel.MyscreenPanel;
 
 /**
  *
  * @author JB
  */
-public abstract class AcaoReal extends Action {
+public abstract class ActionReal extends Action {
 
     private boolean ActionDouble = false;
     private boolean runing = false;
 
-    public AcaoReal() {
+    public ActionReal() {
         this.setIdentification('r');
     }
 
@@ -32,7 +32,7 @@ public abstract class AcaoReal extends Action {
         this.runing = runing;
     }
 
-    public abstract void runArduino(ControlePorta cp, MyscreenPanel sp);
+    public abstract void runArduino(PortControl cp, MyscreenPanel sp);
 
-    public abstract void stopAction(ControlePorta cp, MyscreenPanel sp);
+    public abstract void stopAction(PortControl cp, MyscreenPanel sp);
 }

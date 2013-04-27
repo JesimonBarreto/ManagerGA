@@ -1,8 +1,7 @@
 package ExemploUso;
 
-import GestosCadastrados.*;
-import GestosCadastrados.GestoMaosJuntas;
-import Manager.GerenteDeGestoseAcoes;
+import GesturesStandards.HandsTogether;
+import Manager.ManagerGA;
 import Panel.NewShape;
 import java.awt.Graphics;
 import java.util.Vector;
@@ -27,7 +26,7 @@ public final class MyscreenPanel extends Panel.MyscreenPanel {
     private int maoX, maoY, maoZ, pescX, pescY, pescZ;
     Point3D mao, pesc;
     //Gerente criado, e passando como parâmetro um MyscreenPanel
-    GerenteDeGestoseAcoes gerente = new GerenteDeGestoseAcoes(this);
+    ManagerGA gerente = new ManagerGA(this);
 
     @Override
     public void addLayerShape(ALayerShape shape) {

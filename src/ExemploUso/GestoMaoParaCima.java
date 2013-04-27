@@ -13,7 +13,7 @@ public class GestoMaoParaCima extends Gesture {
     //Os seis pontos em 3D passados como parâmetros no método são para possíveis testes com várias juntas. O método que vai inserir os valores de cada ponto e cada junta vai ser chamado no paint   
 
     @Override
-    public boolean Aconteceu(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
+    public boolean happened(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
         //Criando variável para retorno
         boolean aconteceu = false;
         //Condição para  que o seu gesto aconteça

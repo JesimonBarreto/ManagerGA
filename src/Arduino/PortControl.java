@@ -6,7 +6,7 @@ import gnu.io.SerialPort;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class ControlePorta {
+public class PortControl {
 
     private OutputStream serialOut;
 

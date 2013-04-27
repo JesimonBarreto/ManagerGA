@@ -5,11 +5,11 @@ import Panel.MyscreenPanel;
  *
  * @author JB
  */
-public abstract class AcaoVirtual extends Action {
+public abstract class VirtualAction extends Action {
 
     public abstract void run(MyscreenPanel sp);
 
-    public AcaoVirtual() {
+    public VirtualAction() {
         this.setIdentification('v');
     }
 }

@@ -28,23 +28,23 @@ public abstract class Gesture {
         this.nameClass = nameClass;
     }
 
-    public Point3D getPonto(int i) {
+    public Point3D getPoint(int i) {
         return point[i];
     }
 
-    public void setPonto(Point3D ponto, int i) {
-        this.point[i] = ponto;
+    public void setPoint(Point3D point, int i) {
+        this.point[i] = point;
     }
 
-    public void startPoints(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
-        point[0] = ponto1;
-        point[1] = ponto2;
-        point[2] = ponto3;
-        point[3] = ponto4;
-        point[4] = ponto5;
-        point[5] = ponto6;
+    public void startPoints(Point3D point1, Point3D point2, Point3D point3, Point3D point4, Point3D point5, Point3D point6) {
+        point[0] = point1;
+        point[1] = point2;
+        point[2] = point3;
+        point[3] = point4;
+        point[4] = point5;
+        point[5] = point6;
 
     }
 
-    public abstract boolean Aconteceu(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6);
+    public abstract boolean happened(Point3D point1, Point3D point2, Point3D point3, Point3D point4, Point3D point5, Point3D point6);
 }

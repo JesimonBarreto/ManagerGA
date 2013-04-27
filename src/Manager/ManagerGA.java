@@ -1,9 +1,9 @@
 package Manager;
 
-import Action.AcaoReal;
-import Action.AcaoVirtual;
+import Action.ActionReal;
+import Action.VirtualAction;
 import Action.Action;
-import Arduino.ControlePorta;
+import Arduino.PortControl;
 import Panel.MyscreenPanel;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 import java.util.ArrayList;
@@ -14,12 +14,12 @@ import org.OpenNI.Point3D;
  *
  * @author JB
  */
-public class GerenteDeGestoseAcoes {
+public class ManagerGA {
 
-    public GerenteDeGestoseAcoes(MyscreenPanel msp) {
+    public ManagerGA(MyscreenPanel msp) {
         this.msp = msp;
     }
-    private ControlePorta cp = new ControlePorta();
+    private PortControl cp = new PortControl();
     MyscreenPanel msp = null;
     private Hashtable hs = new Hashtable();
     private String objetoAExecutar = null;
@@ -58,7 +58,7 @@ public class GerenteDeGestoseAcoes {
             StringTest = StringTest2;
             while (i < Gestos.size() && reconhecedor == null) {
                 reconhecedor = Gestos.get(i);
-                if (!reconhecedor.Aconteceu(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6)) {
+                if (!reconhecedor.happened(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6)) {
                     reconhecedor = null;
                 } else {
                     objetoAExecutar = reconhecedor.getNameClass();
@@ -79,20 +79,20 @@ public class GerenteDeGestoseAcoes {
             for (int i = 0; i < aAcao.size(); i++) {
                 Action a = (Action) aAcao.get(i);
                 if (a.getIdentification() == 'r') {
-                    AcaoReal ar = (AcaoReal) a;
+                    ActionReal ar = (ActionReal) a;
                     if (ar.isRuning() && ar.isActionDouble()) {
                         ar.stopAction(cp, msp);
-                        ((AcaoReal) aAcao.get(i)).setRuning(false);
+                        ((ActionReal) aAcao.get(i)).setRuning(false);
                     } else if (!ar.isRuning() && ar.isActionDouble()) {
                         ar.runArduino(cp, msp);
-                        ((AcaoReal) aAcao.get(i)).setRuning(true);
+                        ((ActionReal) aAcao.get(i)).setRuning(true);
                     } else if (!ar.isRuning() && !ar.isActionDouble()) {
                         ar.runArduino(cp, msp);
                     } else if (ar.isRuning() && !ar.isActionDouble()) {
                         ar.runArduino(cp, msp);
                     }
                 } else if (a.getIdentification() == 'v') {
-                    AcaoVirtual av = (AcaoVirtual) a;
+                    VirtualAction av = (VirtualAction) a;
                     av.run(msp);
                 } else {
                     System.out.println("Identificador não está correto");
