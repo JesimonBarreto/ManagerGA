@@ -8,8 +8,8 @@ import Panel.MyscreenPanel;
  *
  * @author JB
  */
-//Classe de Ação para trabalhar com ações no mundo real, ou seja, enviando string pela porta usb para que o arduino execute alguma ação. Para isso a classe 'AcaoEnviarArduino' deve extender da classe 'AcaoReal'
-public class AcaoEnviarArduino extends ActionReal {
+//Classe de Ação, para trabalhar com ações no mundo real, ou seja, enviando string pela porta usb para que o arduino execute alguma ação. Para isso a classe 'AcaoEnviarArduino' deve extender da classe 'AcaoReal'
+public class AcaoArduino extends ActionReal {
 
     //O Método 'executeArduino' é o método em que se registra a ação usando o parâmetro 'cp' de 'ControlePorta' vc pode invocar o método 'enviaDados' e passa como parâmetro um valor tipo char.
     //Também como parâmetro um MyscreenPanel para facilitar alterações no painel
