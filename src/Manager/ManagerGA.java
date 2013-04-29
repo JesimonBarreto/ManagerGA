@@ -95,7 +95,7 @@ public class ManagerGA {
                     VirtualAction av = (VirtualAction) a;
                     av.run(msp);
                 } else {
-                    System.out.println("Identificador não está correto");
+                    System.out.println("Problems in time to object identification");
                 }
             }
         } else if ((Stringshoot2 == null ? Stringshoot != null : !Stringshoot2.equals(Stringshoot)) && decision) {
