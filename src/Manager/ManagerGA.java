@@ -20,13 +20,13 @@ public class ManagerGA {
         this.msp = msp;
     }
     private PortControl cp = new PortControl();
-    MyscreenPanel msp = null;
+    private MyscreenPanel msp = null;
     private Hashtable hs = new Hashtable();
     private String objectExecute = null;
     private String Stringshoot = null;
     private String Stringshoot2 = null;
     private boolean decision = false;
-    private boolean reading= false;
+    private boolean reading = false;
     private ArrayList<Gesture> Gestures = new ArrayList();
 
     public void addGestures(Gesture reconhecedor) {
@@ -49,7 +49,7 @@ public class ManagerGA {
             for (int i = 0; i < Gestures.size(); i++) {
                 Gestures.get(i).startPoints(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
             }
-            reading= true;
+            reading = true;
             objectExecute = null;
             decision = false;
         } else {
@@ -65,7 +65,7 @@ public class ManagerGA {
                 }
                 i++;
             }
-            reading= false;
+            reading = false;
             decision = true;
             Stringshoot2 = objectExecute;
         }
