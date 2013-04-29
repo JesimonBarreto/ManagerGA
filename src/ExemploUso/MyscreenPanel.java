@@ -60,7 +60,7 @@ public final class MyscreenPanel extends Panel.MyscreenPanel {
         //Criando objeto AcaoVirtual
         AcaoExibirNome aen = new AcaoExibirNome();
         //Adicionando ao gerente. Vai precisar de doi valores para parâmetros, uma String(Nome da Classe do gesto a que a ação vai ser associada), o objeto ação
-        gerente.addAcao("GestoMaoParaCima", aen);
+        gerente.addAction("GestoMaoParaCima", aen);
         //Criando objeto AcaoReal
         //AcaoEnviarArduino ea = new AcaoEnviarArduino();
         //Para ativar Acão dupla
@@ -98,8 +98,7 @@ public final class MyscreenPanel extends Panel.MyscreenPanel {
                 pesc = new Point3D(pescX, pescY, pescZ);
 
                 //Chamando método responsável por passar os valores para o gerente
-                gerente.ConcluindoAcao(mao, pesc, mao, pesc, mao, pesc);
-
+                gerente.Finalize(mao, pesc, mao, pesc, mao, pesc);
             } catch (Exception erro) {
             }
 
