@@ -1,4 +1,4 @@
-package ExemploUso;
+package WithUse.ExemploUso;
 
 import GesturesStandards.HandsTogether;
 import Manager.ManagerGA;

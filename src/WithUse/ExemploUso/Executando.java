@@ -1,12 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package ExampleUse;
+package WithUse.ExemploUso;
 
-import ExemploUso.MyscreenPanel;
+import Manager.ManagerGA;
 import javax.swing.JFrame;
+import org.OpenNI.Point3D;
 import presentation.ALayerShape;
+import presentation.impl.KinectMotionCapture.KinectControl.EBone;
 import presentation.impl.KinectMotionCapture.KinectControl.KinectAccess;
 import presentation.impl.KinectMotionCapture.layers.LayerRGB;
 import presentation.impl.KinectMotionCapture.layers.LayerSkeletonBone;
@@ -15,7 +13,7 @@ import presentation.impl.KinectMotionCapture.layers.LayerSkeletonBone;
  *
  * @author JB
  */
-public class RUN {
+public class Executando {
 
     public static void main(String[] args) throws Exception {
 

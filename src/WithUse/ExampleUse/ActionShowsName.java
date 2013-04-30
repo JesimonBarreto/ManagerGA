@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ExampleUse;
+package WithUse.ExampleUse;
 
 import Action.VirtualAction;
 import Panel.MyscreenPanel;

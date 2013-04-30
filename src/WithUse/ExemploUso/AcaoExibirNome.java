@@ -1,4 +1,4 @@
-package ExemploUso;
+package WithUse.ExemploUso;
 
 import Action.VirtualAction;
 import Panel.MyscreenPanel;
