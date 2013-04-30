@@ -1,4 +1,3 @@
-
 package Panel;
 
 import java.awt.Graphics;
@@ -36,7 +35,7 @@ public abstract class MyscreenPanel extends ScreenPanel {
         this.shapes.remove(position);
     }
 
-    public void substituirShape(int posicaoShapeRemover, ALayerShape shape) {
+    public void replaceShape(int posicaoShapeRemover, ALayerShape shape) {
         this.removerShape(posicaoShapeRemover);
         this.addLayerShape(shape);
     }
