@@ -47,7 +47,9 @@ public class ManagerGA {
     private String DetectingGesture(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
         if (!reading) {
             for (int i = 0; i < Gestures.size(); i++) {
-                Gestures.get(i).startPoints(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
+                if (Gestures.get(i).isStartingPoints()) {
+                    Gestures.get(i).startPoints(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
+                }
             }
             reading = true;
             objectExecute = null;

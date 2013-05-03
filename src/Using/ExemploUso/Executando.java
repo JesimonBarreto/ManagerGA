@@ -1,4 +1,4 @@
-package WithUse.ExemploUso;
+package Using.ExemploUso;
 
 import Manager.ManagerGA;
 import javax.swing.JFrame;

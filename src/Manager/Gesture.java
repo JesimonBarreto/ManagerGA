@@ -11,6 +11,15 @@ public abstract class Gesture {
     private Point3D[] point = new Point3D[6];
     private boolean runing = false;
     private String nameClass = null;
+    private boolean StartingPoints = false;
+    
+    public boolean isStartingPoints() {
+        return StartingPoints;
+    }
+
+    public void setStartingPoints(boolean StartingPoints) {
+        this.StartingPoints = StartingPoints;
+    }
 
     public boolean isRuning() {
         return runing;

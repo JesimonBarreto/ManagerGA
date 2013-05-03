@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package WithUse.ExampleUse;
+package Using.ExampleUse;
 
-import WithUse.ExemploUso.MyscreenPanel;
+import Using.ExemploUso.MyscreenPanel;
 import javax.swing.JFrame;
 import presentation.ALayerShape;
 import presentation.impl.KinectMotionCapture.KinectControl.KinectAccess;

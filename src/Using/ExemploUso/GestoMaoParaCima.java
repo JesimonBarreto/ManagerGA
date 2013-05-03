@@ -1,4 +1,4 @@
-package WithUse.ExemploUso;
+package Using.ExemploUso;
 
 import Manager.Gesture;
 import org.OpenNI.Point3D;
