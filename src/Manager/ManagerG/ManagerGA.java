@@ -1,10 +1,10 @@
-package Manager;
+package Manager.ManagerG;
 
-import Action.ActionReal;
-import Action.VirtualAction;
-import Action.Action;
-import Arduino.PortControl;
-import Panel.MyscreenPanel;
+import Manager.Action.ActionReal;
+import Manager.Action.VirtualAction;
+import Manager.Action.Action;
+import Manager.Arduino.PortControl;
+import Manager.Panel.MyscreenPanel;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 import java.util.ArrayList;
 import java.util.Vector;

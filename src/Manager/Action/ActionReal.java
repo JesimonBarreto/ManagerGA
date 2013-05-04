@@ -1,7 +1,7 @@
-package Action;
+package Manager.Action;
 
-import Arduino.PortControl;
-import Panel.MyscreenPanel;
+import Manager.Arduino.PortControl;
+import Manager.Panel.MyscreenPanel;
 
 /**
  *

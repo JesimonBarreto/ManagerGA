@@ -4,8 +4,8 @@
  */
 package Using.ExampleUse;
 
-import Action.VirtualAction;
-import Panel.MyscreenPanel;
+import Manager.Action.VirtualAction;
+import Manager.Panel.MyscreenPanel;
 
 /**
  *

@@ -1,6 +1,6 @@
-package Action;
+package Manager.Action;
 
-import Panel.MyscreenPanel;
+import Manager.Panel.MyscreenPanel;
 /**
  *
  * @author JB

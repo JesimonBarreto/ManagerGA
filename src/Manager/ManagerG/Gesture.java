@@ -1,4 +1,4 @@
-package Manager;
+package Manager.ManagerG;
 
 import org.OpenNI.Point3D;
 

@@ -4,9 +4,9 @@
  */
 package Using.ExampleUse;
 
-import Manager.ManagerGA;
-import Panel.MyscreenPanel;
-import Panel.NewShape;
+import Manager.ManagerG.ManagerGA;
+import Manager.Panel.MyscreenPanel;
+import Manager.Panel.NewShape;
 import java.awt.Graphics;
 import java.util.Vector;
 import org.OpenNI.Point3D;

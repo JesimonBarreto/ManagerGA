@@ -1,8 +1,8 @@
 package Using.ExemploUso;
 
-import GesturesStandards.HandsTogether;
-import Manager.ManagerGA;
-import Panel.NewShape;
+import Manager.GesturesStandards.HandsTogether;
+import Manager.ManagerG.ManagerGA;
+import Manager.Panel.NewShape;
 import java.awt.Graphics;
 import java.util.Vector;
 import org.OpenNI.Point3D;
@@ -16,7 +16,7 @@ import presentation.impl.KinectMotionCapture.KinectControl.SkeletonBone;
  * @author JB
  */
 //Criando classe 'MyscreenPanel' classe onde vai ficar responsável por enviar os dados para o gerente
-public final class MyscreenPanel extends Panel.MyscreenPanel {
+public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
 
     public MyscreenPanel() {
         //Para que os gestos e as ações sejam adicionadas antes da execução
