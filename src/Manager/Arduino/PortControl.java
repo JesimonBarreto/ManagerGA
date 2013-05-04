@@ -26,7 +26,7 @@ public class PortControl {
                     SerialPort.DATABITS_8,
                     SerialPort.STOPBITS_1,
                     SerialPort.PARITY_NONE);
-            System.out.println("Chegou entrou conex�o");
+            System.out.println("established connection");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -41,7 +41,7 @@ public class PortControl {
 
     }
 
-    public void enviarDados(char opcao) {
+    public void sendDate(char opcao) {
         try {
 
             serialOut.write(opcao);

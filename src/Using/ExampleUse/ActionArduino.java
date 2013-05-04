@@ -16,7 +16,7 @@ public class ActionArduino extends ActionReal {
     @Override
     public void runArduino(PortControl cp, MyscreenPanel sp) {
         // Send the number 1 as char using the class method PortControl
-        cp.enviarDados('1');
+        cp.sendDate('1');
     }
 
     //StopAction method is the method that can be used to stop an action previously released, for example, light a lamp is registered a gesture, if this gesture is done twice,

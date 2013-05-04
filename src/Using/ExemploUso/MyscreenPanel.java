@@ -23,8 +23,8 @@ public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
         inserindo();
     }
     Vector shapes = new Vector();
-    private int maoX, maoY, maoZ, pescX, pescY, pescZ;
-    Point3D mao, pesc;
+    private int maoX, maoY, maoZ, pescX, pescY, pescZ, maoYJ1, maoXJ1, maoZJ1;
+    Point3D mao, pesc, maoJ1;
     //Gerente criado, e passando como parâmetro um MyscreenPanel
     ManagerGA gerente = new ManagerGA(this);
 
@@ -88,6 +88,9 @@ public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
                 maoX = (int) sb.getBone(EBone.RIGHT_FOREARM).getJ2().getX();
                 maoY = (int) sb.getBone(EBone.RIGHT_FOREARM).getJ2().getY();
                 maoZ = (int) sb.getBone(EBone.RIGHT_FOREARM).getJ2().getZ();
+                maoXJ1 = (int) sb.getBone(EBone.RIGHT_FOREARM).getJ1().getX();
+                maoYJ1 = (int) sb.getBone(EBone.RIGHT_FOREARM).getJ1().getY();
+                maoZJ1 = (int) sb.getBone(EBone.RIGHT_FOREARM).getJ1().getZ();
                 pescX = (int) sb.getBone(EBone.NECK).getJ2().getX();
                 pescY = (int) sb.getBone(EBone.NECK).getJ2().getY();
                 pescZ = (int) sb.getBone(EBone.NECK).getJ2().getZ();
@@ -95,10 +98,12 @@ public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
                 //Transformando em pontos 3D
 
                 mao = new Point3D(maoX, maoY, maoZ);
+                maoJ1 = new Point3D(maoXJ1, maoYJ1, maoZJ1);
                 pesc = new Point3D(pescX, pescY, pescZ);
 
                 //Chamando método responsável por passar os valores para o gerente
-                gerente.Finalize(mao, pesc, mao, pesc, mao, pesc);
+                gerente.Finalize(mao, pesc, maoJ1, null, null, null);
+                
             } catch (Exception erro) {
             }
 

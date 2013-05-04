@@ -16,7 +16,7 @@ public class AcaoArduino extends ActionReal {
     @Override
     public void runArduino(PortControl cp, MyscreenPanel sp) {
         //Enviar o numero 1 como char usando o método da classe PortControl
-        cp.enviarDados('1');
+        cp.sendDate('1');
     }
 
     //Método stopAction é o método que pode ser usado para parar uma ação lançada anteriormente, por exemplo, Acender uma lâmpada é cadastrado um gesto, caso esse gesto seja feito duas vezes,
