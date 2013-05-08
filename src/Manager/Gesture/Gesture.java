@@ -1,4 +1,4 @@
-package Manager.ManagerG;
+package Manager.Gesture;
 
 import org.OpenNI.Point3D;
 
