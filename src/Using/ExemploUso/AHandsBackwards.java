@@ -10,7 +10,7 @@ import Manager.GesturesStandards.Down;
 import Manager.GesturesStandards.Left;
 import Manager.GesturesStandards.Right;
 import Manager.GesturesStandards.Up;
-import Manager.ManagerG.ManagerGA;
+import Manager.Man.ManagerGA;
 import Manager.Panel.MyscreenPanel;
 
 /**

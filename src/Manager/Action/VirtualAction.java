@@ -1,6 +1,6 @@
 package Manager.Action;
 
-import Manager.ManagerG.ManagerGA;
+import Manager.Man.ManagerGA;
 import Manager.Panel.MyscreenPanel;
 /**
  *

@@ -6,7 +6,7 @@
 package Using.ExemploUso;
 
 import Manager.Action.VirtualAction;
-import Manager.ManagerG.ManagerGA;
+import Manager.Man.ManagerGA;
 import Manager.Panel.MyscreenPanel;
 
 /**

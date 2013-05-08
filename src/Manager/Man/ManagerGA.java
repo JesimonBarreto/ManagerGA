@@ -1,6 +1,6 @@
-package Manager.ManagerG;
+package Manager.Man;
 
-import Manager.Gesture.Gesture;
+import Manager.Ges.Gesture;
 import Manager.Action.ActionReal;
 import Manager.Action.VirtualAction;
 import Manager.Action.Action;

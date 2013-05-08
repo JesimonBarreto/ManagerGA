@@ -2,7 +2,7 @@ package Using.ExemploUso;
 
 import Manager.GesturesStandards.HandsBackwards;
 import Manager.GesturesStandards.HandsUp;
-import Manager.ManagerG.ManagerGA;
+import Manager.Man.ManagerGA;
 import Manager.Panel.NewShape;
 import java.awt.Graphics;
 import java.util.Vector;
