@@ -15,6 +15,7 @@ import org.OpenNI.Point3D;
  * @author JB
  */
 public class ManagerGA {
+//adicionar método removergesture
 
     public ManagerGA(MyscreenPanel msp) {
         this.msp = msp;
@@ -44,12 +45,14 @@ public class ManagerGA {
         ((Vector) hs.get(nameClass)).add(action);
     }
 
+    public void removerGesture(String nomeClass) {
+        hs.remove(nomeClass);
+    }
+
     private String DetectingGesture(Point3D ponto1, Point3D ponto2, Point3D ponto3, Point3D ponto4, Point3D ponto5, Point3D ponto6) {
         if (!reading) {
             for (int i = 0; i < Gestures.size(); i++) {
-                if (Gestures.get(i).isStartingPoints()) {
-                    Gestures.get(i).startPoints(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
-                }
+                Gestures.get(i).startPoints(ponto1, ponto2, ponto3, ponto4, ponto5, ponto6);
             }
             reading = true;
             objectExecute = null;
@@ -95,7 +98,7 @@ public class ManagerGA {
                     }
                 } else if (a.getIdentification() == 'v') {
                     VirtualAction av = (VirtualAction) a;
-                    av.run(msp);
+                    av.run(msp, this);
                 } else {
                     System.out.println("Problems in time to object identification");
                 }

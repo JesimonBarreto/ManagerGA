@@ -1,6 +1,7 @@
 package Using.ExemploUso;
 
-import Manager.GesturesStandards.HandsTogether;
+import Manager.GesturesStandards.HandsBackwards;
+import Manager.GesturesStandards.HandsUp;
 import Manager.ManagerG.ManagerGA;
 import Manager.Panel.NewShape;
 import java.awt.Graphics;
@@ -23,8 +24,8 @@ public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
         inserindo();
     }
     Vector shapes = new Vector();
-    private int maoX, maoY, maoZ, pescX, pescY, pescZ, maoYJ1, maoXJ1, maoZJ1;
-    Point3D mao, pesc, maoJ1;
+    private int maoX, maoY, maoZ, pescX, pescY, pescZ, maoYJ1, maoXJ1, maoZJ1, maoLx, maoLy, maoLz;
+    Point3D mao, pesc, maoJ1, maoL;
     //Gerente criado, e passando como parâmetro um MyscreenPanel
     ManagerGA gerente = new ManagerGA(this);
 
@@ -51,8 +52,16 @@ public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
     //Método responsável por inserir Gestos e Ações no Gerente
 
     public void inserindo() {
+        HandsBackwards hb = new HandsBackwards();
+        gerente.addGestures(hb);
+        AHandsBackwards ahb = new AHandsBackwards();
+        gerente.addAction("HandsBackwards", ahb);
 
-        GestoMaoParaCima mpc = new GestoMaoParaCima();
+        HandsUp hu = new HandsUp();
+        gerente.addGestures(hu);
+        AHandsUp ahu = new AHandsUp();
+        gerente.addAction("HandsUp", ahu);
+        /*GestoMaoParaCima mpc = new GestoMaoParaCima();
         //Método que vai guadar o nome da classe para armazenar as ações em conjunto
         mpc.setNameClass("GestoMaoParaCima");
         //Adicionando novo gesto ao gerente
@@ -66,7 +75,7 @@ public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
         //Para ativar Acão dupla
         //ea.setAcaoDupla(true);
         //Adicionando ao gerente
-        // gerente.addAcao("GestoMaoParaCima", ea);
+        // gerente.addAcao("GestoMaoParaCima", ea);*/
     }
 
 //A classe Abstrata 'MyscreenPanel'tem um método substituirShape, passando a posição do que tiver de ser removido e o novo shape como parâmetro o método faz a substituição.
@@ -94,16 +103,17 @@ public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
                 pescX = (int) sb.getBone(EBone.NECK).getJ2().getX();
                 pescY = (int) sb.getBone(EBone.NECK).getJ2().getY();
                 pescZ = (int) sb.getBone(EBone.NECK).getJ2().getZ();
-
+                maoLx = (int) sb.getBone(EBone.LEFT_FOREARM).getJ2().getX();
+                maoLy = (int) sb.getBone(EBone.LEFT_FOREARM).getJ2().getY();
+                maoLz = (int) sb.getBone(EBone.LEFT_FOREARM).getJ2().getZ();
                 //Transformando em pontos 3D
-
                 mao = new Point3D(maoX, maoY, maoZ);
                 maoJ1 = new Point3D(maoXJ1, maoYJ1, maoZJ1);
                 pesc = new Point3D(pescX, pescY, pescZ);
-
+                maoL = new Point3D(maoLx, maoLy, maoLz);
                 //Chamando método responsável por passar os valores para o gerente
-                gerente.Finalize(mao, pesc, maoJ1, null, null, null);
-                
+                gerente.Finalize(mao, pesc, maoJ1, maoL, null, null);
+
             } catch (Exception erro) {
             }
 

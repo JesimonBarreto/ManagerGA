@@ -1,5 +1,6 @@
 package Manager.Panel;
 
+import Manager.ManagerG.ManagerGA;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;

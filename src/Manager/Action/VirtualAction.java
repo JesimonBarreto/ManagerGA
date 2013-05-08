@@ -1,5 +1,6 @@
 package Manager.Action;
 
+import Manager.ManagerG.ManagerGA;
 import Manager.Panel.MyscreenPanel;
 /**
  *
@@ -7,7 +8,7 @@ import Manager.Panel.MyscreenPanel;
  */
 public abstract class VirtualAction extends Action {
 
-    public abstract void run(MyscreenPanel sp);
+    public abstract void run(MyscreenPanel sp,ManagerGA gerente);
 
     public VirtualAction() {
         this.setIdentification('v');
