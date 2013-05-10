@@ -1,6 +1,6 @@
 package Using.ExemploUso;
 
-import Manager.ManagerG.ManagerGA;
+import Manager.Man.ManagerGA;
 import javax.swing.JFrame;
 import org.OpenNI.Point3D;
 import presentation.ALayerShape;

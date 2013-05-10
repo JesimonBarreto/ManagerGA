@@ -4,7 +4,7 @@
  */
 package Using.ExampleUse;
 
-import Manager.ManagerG.ManagerGA;
+import Manager.Man.ManagerGA;
 import Manager.Panel.MyscreenPanel;
 import Manager.Panel.NewShape;
 import java.awt.Graphics;

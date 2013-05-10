@@ -13,16 +13,21 @@ import presentation.ALayerShape;
  */
 public class NewShape extends MyALayerShape {
 
-    ImageObserver imagemOb;
-    BufferedImage image = null;
+    private ImageObserver imagemOb;
+    private BufferedImage image = null;
+    private int x1,x2,y1,y2;
 
-    public NewShape(BufferedImage image, ImageObserver thi) throws Exception {
+    public NewShape(BufferedImage image, ImageObserver thi,int x1,int x2,int y1,int y2) throws Exception {
         this.imagemOb = thi;
         this.image = image;
+        this.x1=x1;
+        this.x2=x2;
+        this.y1=y1;
+        this.y2=y2;
     }
 
     @Override
     public void draw(Graphics grphcs) {
-        grphcs.drawImage(image, this.getPoint(0).x, this.getPoint(0).y, (this.getPoint(1).x - this.getPoint(0).x), (this.getPoint(1).y - this.getPoint(0).y), imagemOb);
+        grphcs.drawImage(image, x1, y1, x2, y2, imagemOb);
     }
 }
