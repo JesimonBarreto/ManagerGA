@@ -11,7 +11,7 @@ import Manager.Panel.MyscreenPanel;
 
 /**
  *
- * @author 20111lired0190
+ * @author JB
  */
 public class Aright extends VirtualAction{
 

@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Using.ExemploUso;
+package Using.ExampleUse;
 
+import Using.ExemploUso.*;
 import Manager.Action.VirtualAction;
 import Manager.GesturesStandards.Center;
 import Manager.GesturesStandards.Down;
@@ -15,7 +16,7 @@ import Manager.Panel.MyscreenPanel;
 
 /**
  *
- * @author JB
+ * @author 20111lired0190
  */
 public class AHandsBackwards extends VirtualAction {
 

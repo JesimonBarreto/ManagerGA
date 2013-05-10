@@ -3,25 +3,22 @@
  * and open the template in the editor.
  */
 
-package Using.ExemploUso;
+package Using.ExampleUse;
 
+import Using.ExemploUso.*;
 import Manager.Action.VirtualAction;
 import Manager.Man.ManagerGA;
 import Manager.Panel.MyscreenPanel;
 
 /**
  *
- * @author JB
+ * @author 20111lired0190
  */
-public class AHandsUp extends VirtualAction{
+public class Aright extends VirtualAction{
 
     @Override
     public void run(MyscreenPanel sp, ManagerGA gerente) {
-        gerente.removerGesture("Down");
-        gerente.removerGesture("Up");
-        gerente.removerGesture("Right");
-        gerente.removerGesture("Left");
-        gerente.removerGesture("Center");
+      System.out.println("Right");
     }
 
 }
