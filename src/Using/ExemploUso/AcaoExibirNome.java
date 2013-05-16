@@ -12,7 +12,7 @@ import Manager.Panel.MyscreenPanel;
 public class AcaoExibirNome extends VirtualAction {
 
     //Método 'execute' é o método de ação, qualquer ação para ser feita no proprio computador, em java mesmo, como parametro é passado 'MyscreenPanel'
-    //que é do tipo 'ScreenPanel', com objetivo de facilitar a alteração de algum shape no painel, com um método 'replaceShape'.
+    //com objetivo de facilitar a alteração de algum shape no painel, também pode ser usado um método de substituição de desenho no painel,passando o int com o valor da posição do shape e o novo shape 'replaceShape'.
      @Override
     public void run(MyscreenPanel sp, ManagerGA gerente) {
        //Vamos colocar como exemplo exibir 'JB'

@@ -20,8 +20,8 @@ public class AcaoArduino extends ActionReal {
     }
 
     //Método stopAction é o método que pode ser usado para parar uma ação lançada anteriormente, por exemplo, Acender uma lâmpada é cadastrado um gesto, caso esse gesto seja feito duas vezes,
-    //o segundo será chamado esse método que seria para apagar a lâmpada. Lembrado que para ativar essa opção é preciso dar
-    //um setAcaoDupla passando true como parâmetro antes de adicionar ao gesto.
+    //a segunda vez será chamado esse método que será para apagar a lâmpada. Para que essa situação seja possível é necessário passara true no método local ActionDouble().
+    
     @Override
     public void stopAction(PortControl cp, MyscreenPanel sp) {
         throw new UnsupportedOperationException("Not supported yet.");

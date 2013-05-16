@@ -52,16 +52,7 @@ public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
     //Método responsável por inserir Gestos e Ações no Gerente
 
     public void inserindo() {
-        HandsBackwards hb = new HandsBackwards();
-        gerente.addGestures(hb);
-        AHandsBackwards ahb = new AHandsBackwards();
-        gerente.addAction("HandsBackwards", ahb);
-
-        HandsUp hu = new HandsUp();
-        gerente.addGestures(hu);
-        AHandsUp ahu = new AHandsUp();
-        gerente.addAction("HandsUp", ahu);
-        /*GestoMaoParaCima mpc = new GestoMaoParaCima();
+        GestoMaoParaCima mpc = new GestoMaoParaCima();
         //Método que vai guadar o nome da classe para armazenar as ações em conjunto
         mpc.setNameClass("GestoMaoParaCima");
         //Adicionando novo gesto ao gerente
@@ -75,7 +66,7 @@ public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
         //Para ativar Acão dupla
         //ea.setAcaoDupla(true);
         //Adicionando ao gerente
-        // gerente.addAcao("GestoMaoParaCima", ea);*/
+        // gerente.addAcao("GestoMaoParaCima", ea);
     }
 
 //A classe Abstrata 'MyscreenPanel'tem um método substituirShape, passando a posição do que tiver de ser removido e o novo shape como parâmetro o método faz a substituição.
@@ -112,7 +103,7 @@ public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
                 pesc = new Point3D(pescX, pescY, pescZ);
                 maoL = new Point3D(maoLx, maoLy, maoLz);
                 //Chamando método responsável por passar os valores para o gerente
-                gerente.Finalize(mao, pesc, maoJ1, maoL, null, null);
+                gerente.Finalize(mao, pesc, null, null, null, null);
 
             } catch (Exception erro) {
             }
