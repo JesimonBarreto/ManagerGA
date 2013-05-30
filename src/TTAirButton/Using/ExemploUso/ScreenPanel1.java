@@ -1,8 +1,8 @@
 package TTAirButton.Using.ExemploUso;
 
 import Manager.Gesture.Panel.NewShape;
-import Manager.TTAirButton.TTAirButton;
 import Manager.TTAirButton.ManagerImage;
+import Manager.TTAirButton.TTAirButton;
 import java.awt.Graphics;
 import java.util.Vector;
 import org.OpenNI.Point3D;
