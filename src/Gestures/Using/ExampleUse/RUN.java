@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Gestures.Using.Gestures.ExampleUse;
+package Gestures.Using.ExampleUse;
 
 import Gestures.Using.ExemploUso.MyscreenPanel;
 import javax.swing.JFrame;

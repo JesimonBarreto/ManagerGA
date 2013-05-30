@@ -1,6 +1,6 @@
 package Gestures.Using.ExemploUso;
 
-import Manager.Gestures.Man.ManagerGA;
+import Manager.Gesture.Man.ManagerGA;
 import javax.swing.JFrame;
 import org.OpenNI.Point3D;
 import presentation.ALayerShape;

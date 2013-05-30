@@ -1,7 +1,7 @@
 package Manager.Gesture.Action;
 
 import Manager.Gesture.Arduino.PortControl;
-import Manager.Gestures.Panel.MyscreenPanel;
+import Manager.Gesture.Panel.MyscreenPanel;
 
 /**
  *

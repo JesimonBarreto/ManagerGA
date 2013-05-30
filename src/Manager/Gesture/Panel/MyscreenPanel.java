@@ -1,6 +1,6 @@
-package Manager.Gestures.Panel;
+package Manager.Gesture.Panel;
 
-import Manager.Gestures.Man.ManagerGA;
+import Manager.Gesture.Man.ManagerGA;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;

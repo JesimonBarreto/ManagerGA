@@ -2,16 +2,16 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Gestures.Using.Gestures.ExampleUse;
+package Gestures.Using.ExampleUse;
 
 import Manager.Gesture.Action.VirtualAction;
-import Manager.Gestures.GesturesStandards.Center;
-import Manager.Gestures.GesturesStandards.Down;
-import Manager.Gestures.GesturesStandards.Left;
-import Manager.Gestures.GesturesStandards.Right;
-import Manager.Gestures.GesturesStandards.Up;
-import Manager.Gestures.Man.ManagerGA;
-import Manager.Gestures.Panel.MyscreenPanel;
+import Manager.Gesture.GesturesStandards.Center;
+import Manager.Gesture.GesturesStandards.Down;
+import Manager.Gesture.GesturesStandards.Left;
+import Manager.Gesture.GesturesStandards.Right;
+import Manager.Gesture.GesturesStandards.Up;
+import Manager.Gesture.Man.ManagerGA;
+import Manager.Gesture.Panel.MyscreenPanel;
 
 /**
  *

@@ -4,7 +4,7 @@
  */
 package Manager.TTAirButton;
 
-import Manager.Gestures.Panel.NewShape;
+import Manager.Gesture.Panel.NewShape;
 import TTAirButton.Using.ExemploUso.ScreenPanel1;
 import java.awt.Point;
 import java.util.*;

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Manager.Gestures.GesturesStandards;
+package Manager.Gesture.GesturesStandards;
 
 import Manager.Gesture.Ges.Gesture;
 import org.OpenNI.Point3D;

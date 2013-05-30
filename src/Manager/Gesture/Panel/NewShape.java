@@ -1,4 +1,4 @@
-package Manager.Gestures.Panel;
+package Manager.Gesture.Panel;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

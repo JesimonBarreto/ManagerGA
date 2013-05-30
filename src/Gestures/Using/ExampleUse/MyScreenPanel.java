@@ -2,11 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Gestures.Using.Gestures.ExampleUse;
+package Gestures.Using.ExampleUse;
 
-import Manager.Gestures.Man.ManagerGA;
-import Manager.Gestures.Panel.MyscreenPanel;
-import Manager.Gestures.Panel.NewShape;
+import Manager.Gesture.Man.ManagerGA;
+import Manager.Gesture.Panel.MyscreenPanel;
+import Manager.Gesture.Panel.NewShape;
 import java.awt.Graphics;
 import java.util.Vector;
 import org.OpenNI.Point3D;

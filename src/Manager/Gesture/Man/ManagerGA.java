@@ -1,11 +1,11 @@
-package Manager.Gestures.Man;
+package Manager.Gesture.Man;
 
 import Manager.Gesture.Ges.Gesture;
 import Manager.Gesture.Action.ActionReal;
 import Manager.Gesture.Action.VirtualAction;
 import Manager.Gesture.Action.Action;
 import Manager.Gesture.Arduino.PortControl;
-import Manager.Gestures.Panel.MyscreenPanel;
+import Manager.Gesture.Panel.MyscreenPanel;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 import java.util.ArrayList;
 import java.util.Vector;

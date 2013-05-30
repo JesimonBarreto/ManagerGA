@@ -1,6 +1,6 @@
 package TTAirButton.Using.ExemploUso;
 
-import Manager.Gestures.Panel.NewShape;
+import Manager.Gesture.Panel.NewShape;
 import Manager.TTAirButton.TTAirButton;
 import Manager.TTAirButton.ManagerImage;
 import java.awt.Graphics;
@@ -15,7 +15,7 @@ import presentation.impl.KinectMotionCapture.KinectControl.SkeletonBone;
  *
  * @author JB
  */
-public final class ScreenPanel1 extends Manager.Gestures.Panel.MyscreenPanel {
+public final class ScreenPanel1 extends Manager.Gesture.Panel.MyscreenPanel {
 
     private Vector shapes = new Vector();
     private ManagerImage mi = new ManagerImage();

@@ -3,21 +3,21 @@
  * and open the template in the editor.
  */
 
-package Gestures.Using.Gestures.ExampleUse;
+package Gestures.Using.ExampleUse;
 
 import Manager.Gesture.Action.VirtualAction;
-import Manager.Gestures.Man.ManagerGA;
-import Manager.Gestures.Panel.MyscreenPanel;
+import Manager.Gesture.Man.ManagerGA;
+import Manager.Gesture.Panel.MyscreenPanel;
 
 /**
  *
  * @author 20111lired0190
  */
-public class Aup extends VirtualAction{
+public class Adown extends VirtualAction{
 
     @Override
     public void run(MyscreenPanel sp, ManagerGA gerente) {
-        System.out.println("UP");
+       System.out.println("Down");
     }
 
 }
