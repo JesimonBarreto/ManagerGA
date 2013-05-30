@@ -2,30 +2,36 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Manager.Gesture.GesturesStandards;
 
+import Manager.Gesture.Action.VirtualAction;
 import Manager.Gesture.Ges.Gesture;
+import Manager.Gestures.Panel.MyscreenPanel;
 import org.OpenNI.Point3D;
+
 
 /**
  *
  * @author 20111lired0190
  */
-public class HandsUp extends Gesture {
+public class HandsBackwards extends Gesture{
 
-    public HandsUp() {
-        this.setNameClass("HandsUp");
+    public HandsBackwards() {
+        this.setNameClass("HandsBackwards");
     }
 
     @Override
     public boolean happened(Point3D point1, Point3D point2, Point3D point3, Point3D point4, Point3D point5, Point3D point6) {
-        boolean happened = false;
-        if (point1.getY() < point2.getY()) {
-            if (point4.getY() < point2.getY()) {
-                happened = true;
+      boolean happened=false;
+        if(point1.getZ()>point2.getZ()){
+            if(point4.getZ()>point2.getZ()){
+                happened=true;
             }
 
         }
         return happened;
     }
+
+    
 }

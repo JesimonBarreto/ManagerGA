@@ -1,6 +1,6 @@
-package Manager.GesturesStandards;
+package Manager.Gesture.GesturesStandards;
 
-import Manager.Ges.Gesture;
+import Manager.Gesture.Ges.Gesture;
 import org.OpenNI.Point3D;
 
 /**

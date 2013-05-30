@@ -1,35 +1,32 @@
-package Using.ExemploUso;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package imagemanager;
 
-import Manager.Gestures.Man.ManagerGA;
 import javax.swing.JFrame;
-import org.OpenNI.Point3D;
 import presentation.ALayerShape;
-import presentation.impl.KinectMotionCapture.KinectControl.EBone;
 import presentation.impl.KinectMotionCapture.KinectControl.KinectAccess;
 import presentation.impl.KinectMotionCapture.layers.LayerRGB;
-import presentation.impl.KinectMotionCapture.layers.LayerSkeletonBone;
 
 /**
  *
  * @author JB
  */
-public class Executando {
+public class TTAirImage {
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) throws Exception {
-
-        MyscreenPanel sp = new MyscreenPanel();
-
+        ScreenPanel1 sp = new ScreenPanel1();
         ALayerShape rgb = null;
-        LayerSkeletonBone sb = null;
         try {
             rgb = new LayerRGB();
-            sb = new LayerSkeletonBone();
         } catch (Exception erro) {
-            System.out.println("erro");
+            System.out.println("error: Add RGB");
         }
         sp.addLayerShape(rgb);
-        sp.addLayerShape(sb);
-
         JFrame frame = new JFrame();
         frame.setSize(KinectAccess.getPrefSize());
         frame.add(sp);
