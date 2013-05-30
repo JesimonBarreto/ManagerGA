@@ -105,7 +105,7 @@ public class ManagerImage {
         TTAirButton img = this.searchImage(pHand, pRBody);
         scp.removeShape(img.getIdentification());
         try {
-            NewShape ns = new NewShape(img.getImage(type), scp, (int) img.getPoint(0).getX(), (int) img.getPoint(1).getX(), (int) img.getPoint(0).getY(), (int) img.getPoint(1).getY(), "baixo");
+            NewShape ns = new NewShape(img.getImage(type), scp, (int) img.getPoint(0).getX(), (int) img.getPoint(1).getX(), (int) img.getPoint(0).getY(), (int) img.getPoint(1).getY(), img.getIdentification());
             scp.addLayerShape(ns);
         } catch (Exception ex) {
             System.out.println("error: Finalize");

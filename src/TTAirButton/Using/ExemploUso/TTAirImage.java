@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import presentation.ALayerShape;
 import presentation.impl.KinectMotionCapture.KinectControl.KinectAccess;
 import presentation.impl.KinectMotionCapture.layers.LayerRGB;
-import Manager.Gesture.Panel.NewShape;
 
 /**
  *
