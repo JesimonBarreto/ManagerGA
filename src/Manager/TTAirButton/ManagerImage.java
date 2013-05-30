@@ -75,7 +75,7 @@ public class ManagerImage {
 
     public boolean Click(int handZ, int neckZ) {
         boolean click = false;
-        if (neckZ - handZ > 400) {
+        if (neckZ - handZ > 450) {
             click = true;
         }
         return click;
