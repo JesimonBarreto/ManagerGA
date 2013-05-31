@@ -72,9 +72,9 @@ public final class ScreenPanel1 extends Manager.Gesture.Panel.MyscreenPanel {
             SkeletonBone sb;
             try {
                 sb = KinectAccess.getSkeletonsBone();
-                handX = (int) sb.getBone(EBone.LEFT_FOREARM).getJ2().getX();
-                handY = (int) sb.getBone(EBone.LEFT_FOREARM).getJ2().getY();
-                handZ = (int) sb.getBone(EBone.LEFT_FOREARM).getJ2().getZ();
+                handX = (int) sb.getBone(EBone.RIGHT_FOREARM).getJ2().getX();
+                handY = (int) sb.getBone(EBone.RIGHT_FOREARM).getJ2().getY();
+                handZ = (int) sb.getBone(EBone.RIGHT_FOREARM).getJ2().getZ();
                 neckX = (int) sb.getBone(EBone.NECK).getJ2().getX();
                 neckY = (int) sb.getBone(EBone.NECK).getJ2().getY();
                 neckZ = (int) sb.getBone(EBone.NECK).getJ2().getZ();
