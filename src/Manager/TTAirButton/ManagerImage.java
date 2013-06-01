@@ -47,19 +47,11 @@ public class ManagerImage {
     public void addTTAirButton(TTAirButton button) {
         buttons.add(button);
         Vector action = new Vector();
-        table.put(button.getIdentification() + "Selected", action);
         table.put(button.getIdentification(), action);
     }
 
-    public void addActionButton(TTAirButton button, String stateButton, Action action) {
-        if (stateButton.equals("Selected")) {
-            ((Vector) table.get(button.getIdentification() + "Selected")).add(action);
-        } else if (stateButton.equals("Clicked")) {
-            ((Vector) table.get(button.getIdentification())).add(action);
-        } else {
-            System.out.println("Erro: Add Action");
-        }
-
+    public void addActionButton(TTAirButton button, Action action) {
+        ((Vector) table.get(button.getIdentification())).add(action);
     }
 
     public void insertImage(String identification, int i) {
@@ -124,27 +116,29 @@ public class ManagerImage {
         return image;
     }
 
-    public void run(Vector vAction) {
+    public void run(Vector vAction, String state) {
         for (int i = 0; i < vAction.size(); i++) {
             Action a = (Action) vAction.get(i);
-            if (a.getIdentification() == 'r') {
-                ActionReal ar = (ActionReal) a;
-                if (ar.isRuning() && ar.isActionDouble()) {
-                    ar.stopAction(cp, msp);
-                    ((ActionReal) vAction.get(i)).setRuning(false);
-                } else if (!ar.isRuning() && ar.isActionDouble()) {
-                    ar.runArduino(cp, msp);
-                    ((ActionReal) vAction.get(i)).setRuning(true);
-                } else if (!ar.isRuning() && !ar.isActionDouble()) {
-                    ar.runArduino(cp, msp);
-                } else if (ar.isRuning() && !ar.isActionDouble()) {
-                    ar.runArduino(cp, msp);
+            if (a.getImageAction().equals(state)) {
+                if (a.getIdentification() == 'r') {
+                    ActionReal ar = (ActionReal) a;
+                    if (ar.isRuning() && ar.isActionDouble()) {
+                        ar.stopAction(cp, msp);
+                        ((ActionReal) vAction.get(i)).setRuning(false);
+                    } else if (!ar.isRuning() && ar.isActionDouble()) {
+                        ar.runArduino(cp, msp);
+                        ((ActionReal) vAction.get(i)).setRuning(true);
+                    } else if (!ar.isRuning() && !ar.isActionDouble()) {
+                        ar.runArduino(cp, msp);
+                    } else if (ar.isRuning() && !ar.isActionDouble()) {
+                        ar.runArduino(cp, msp);
+                    }
+                } else if (a.getIdentification() == 'v') {
+                    VirtualAction av = (VirtualAction) a;
+                    av.run(msp, managerGesture);
+                } else {
+                    System.out.println("Problems in time to object identification");
                 }
-            } else if (a.getIdentification() == 'v') {
-                VirtualAction av = (VirtualAction) a;
-                av.run(msp, managerGesture);
-            } else {
-                System.out.println("Problems in time to object identification");
             }
         }
     }
@@ -157,14 +151,14 @@ public class ManagerImage {
             scp.addLayerShape(ns);
             if (type != testType) {
                 if (type == 'S') {
-                    if (((Vector) table.get(img.getIdentification() + "Selected")).get(0) != null) {
-                        Vector actionS = (Vector) table.get(img.getIdentification() + "Selected");
-                        this.run(actionS);
+                    if (((Vector) table.get(img.getIdentification())).get(0) != null) {
+                        Vector actionS = (Vector) table.get(img.getIdentification());
+                        this.run(actionS, "Selected");
                     }
                 } else if (type == 'C') {
-                    if (((Vector) table.get(img.getIdentification() + "Clicked")).get(0) != null) {
-                        Vector actionC = (Vector) table.get(img.getIdentification() + "Clicked");
-                        this.run(actionC);
+                    if (((Vector) table.get(img.getIdentification())).get(0) != null) {
+                        Vector actionC = (Vector) table.get(img.getIdentification());
+                        this.run(actionC, "Clicked");
                     }
                 } else if (type != 'N') {
                     System.out.println("Error: Run action");

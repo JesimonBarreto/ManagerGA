@@ -16,27 +16,27 @@ import presentation.impl.KinectMotionCapture.KinectControl.SkeletonBone;
  * @author JB
  */
 public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
-
+    
     private Vector shapes = new Vector();
     private ManagerImage mi = new ManagerImage(this);
     private int handX, handY, handZ, neckX, neckY, neckZ;
     private Point3D hand3d, neck3d;
-
+    
     public ScreenPanel1() throws Exception {
         super();
         this.SelectingImage();
     }
-
+    
     @Override
     public void addLayerShape(ALayerShape shape) {
         this.shapes.add(shape);
     }
-
+    
     @Override
     public void removerShape(int position) {
         this.shapes.remove(position);
     }
-
+    
     @Override
     public void removeShape(String name) {
         for (int i = 0; i < shapes.size(); i++) {
@@ -47,10 +47,10 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
                     this.removerShape(i);
                 }
             }
-
+            
         }
     }
-
+    
     public void SelectingImage() {
         TTAirButton ti = new TTAirButton();
         ti.setPoint(200, 100, 0);
@@ -58,11 +58,13 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
         ti.setIdentification("baixo");
         mi.addTTAirButton(ti);
         DisplayName sn = new DisplayName();
-        mi.addActionButton(ti, "Selected", sn);
+        sn.setImageAction("Selected");
+        mi.addActionButton(ti, sn);
         DisplayName2 sn2 = new DisplayName2();
-        mi.addActionButton(ti, "Clicked", sn2);
+        sn2.setImageAction("Clicked");
+        mi.addActionButton(ti, sn2);
     }
-
+    
     @Override
     public void paint(Graphics g) {
         if (!shapes.isEmpty()) {
@@ -71,7 +73,7 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
                 ALayerShape shape = (ALayerShape) shapes.get(a);
                 shape.draw(g);
             }
-
+            
             SkeletonBone sb;
             try {
                 sb = KinectAccess.getSkeletonsBone();
@@ -81,17 +83,17 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
                 neckX = (int) sb.getBone(EBone.NECK).getJ2().getX();
                 neckY = (int) sb.getBone(EBone.NECK).getJ2().getY();
                 neckZ = (int) sb.getBone(EBone.NECK).getJ2().getZ();
-
+                
                 hand3d = new Point3D(handX, handY, handZ);
                 neck3d = new Point3D(neckX, neckY, neckZ);
                 mi.addImages();
                 mi.Finalize(hand3d, neck3d, this);
-
+                
             } catch (Exception ex) {
             }
-
+            
         }
         this.repaint();
-
+        
     }
 }
