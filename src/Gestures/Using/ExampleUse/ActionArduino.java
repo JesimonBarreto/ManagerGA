@@ -1,8 +1,8 @@
 package Gestures.Using.ExampleUse;
 
-import Manager.Gesture.Action.ActionReal;
-import Manager.Gesture.Arduino.PortControl;
-import Manager.Gesture.Panel.MyscreenPanel;
+import Manager.Action.ActionReal;
+import Manager.Arduino.PortControl;
+import Manager.Panel.MyscreenPanel;
 
 /**
  *

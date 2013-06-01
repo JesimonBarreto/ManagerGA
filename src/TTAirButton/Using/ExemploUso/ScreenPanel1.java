@@ -1,7 +1,6 @@
 package TTAirButton.Using.ExemploUso;
 
-
-import Manager.Gesture.Panel.NewShape;
+import Manager.Panel.NewShape;
 import Manager.TTAirButton.ManagerImage;
 import Manager.TTAirButton.TTAirButton;
 import java.awt.Graphics;
@@ -16,10 +15,10 @@ import presentation.impl.KinectMotionCapture.KinectControl.SkeletonBone;
  *
  * @author JB
  */
-public final class ScreenPanel1 extends Manager.Gesture.Panel.MyscreenPanel {
+public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
 
     private Vector shapes = new Vector();
-    private ManagerImage mi = new ManagerImage();
+    private ManagerImage mi = new ManagerImage(this);
     private int handX, handY, handZ, neckX, neckY, neckZ;
     private Point3D hand3d, neck3d;
 
@@ -58,6 +57,10 @@ public final class ScreenPanel1 extends Manager.Gesture.Panel.MyscreenPanel {
         ti.setPoint(550, 300, 1);
         ti.setIdentification("baixo");
         mi.addTTAirButton(ti);
+        DisplayName sn = new DisplayName();
+        mi.addActionButton(ti, "Selected", sn);
+        DisplayName2 sn2 = new DisplayName2();
+        mi.addActionButton(ti, "Clicked", sn2);
     }
 
     @Override

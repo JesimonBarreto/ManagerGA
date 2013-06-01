@@ -4,7 +4,11 @@
  */
 package Manager.TTAirButton;
 
-import Manager.Gesture.Panel.NewShape;
+import Manager.Action.*;
+import Manager.Arduino.PortControl;
+import Manager.Gesture.Man.ManagerGA;
+import Manager.Panel.MyscreenPanel;
+import Manager.Panel.NewShape;
 import TTAirButton.Using.ExemploUso.ScreenPanel1;
 import java.awt.Point;
 import java.util.*;
@@ -16,10 +20,14 @@ import org.OpenNI.Point3D;
  */
 public class ManagerImage {
 
+    private PortControl cp = new PortControl();
+    private MyscreenPanel msp = null;
     private Vector buttons = new Vector();
+    private Hashtable table = new Hashtable();
     private ConverterToBuffer converterTB = new ConverterToBuffer();
     private MyFile files = new MyFile();
-    private String type = null;
+    private char type, testType;
+    private ManagerGA managerGesture = new ManagerGA(msp);
 
     public Vector getImages() {
         return buttons;
@@ -29,14 +37,30 @@ public class ManagerImage {
         return files;
     }
 
-    public ManagerImage() {
+    public ManagerImage(MyscreenPanel msp) {
         if (!files.directoryExists()) {
             files.createDirectory();
         }
+        this.msp = msp;
     }
 
-    public void addTTAirButton(TTAirButton image) {
-        buttons.add(image);
+    public void addTTAirButton(TTAirButton button) {
+        buttons.add(button);
+        Vector actionS = new Vector();
+        Vector actionC = new Vector();
+        table.put(button.getIdentification() + "Selected", actionS);
+        table.put(button.getImage('N'), actionC);
+    }
+
+    public void addActionButton(TTAirButton button, String stateButton, Action action) {
+        if (stateButton.equals("Selected")) {
+            ((Vector) table.get(button.getIdentification() + "Selected")).add(action);
+        } else if (stateButton.equals("Clicked")) {
+            ((Vector) table.get(button.getImage('N'))).add(action);
+        } else {
+            System.out.println("Erro: Add Action");
+        }
+
     }
 
     public void insertImage(String identification, int i) {
@@ -89,16 +113,41 @@ public class ManagerImage {
             TTAirButton imageT = (TTAirButton) buttons.get(i);
             if (imageT.Contain(point) && click) {
                 image = imageT;
-                type = "C";
+                type = 'C';
             } else if (imageT.Contain(point) && !click) {
                 image = imageT;
-                type = "S";
+                type = 'S';
             } else if (image == null && i == buttons.size() - 1) {
                 image = imageT;
-                type = "N";
+                type = 'N';
             }
         }
         return image;
+    }
+
+    public void run(Vector vAction) {
+        for (int i = 0; i < vAction.size(); i++) {
+            Action a = (Action) vAction.get(i);
+            if (a.getIdentification() == 'r') {
+                ActionReal ar = (ActionReal) a;
+                if (ar.isRuning() && ar.isActionDouble()) {
+                    ar.stopAction(cp, msp);
+                    ((ActionReal) vAction.get(i)).setRuning(false);
+                } else if (!ar.isRuning() && ar.isActionDouble()) {
+                    ar.runArduino(cp, msp);
+                    ((ActionReal) vAction.get(i)).setRuning(true);
+                } else if (!ar.isRuning() && !ar.isActionDouble()) {
+                    ar.runArduino(cp, msp);
+                } else if (ar.isRuning() && !ar.isActionDouble()) {
+                    ar.runArduino(cp, msp);
+                }
+            } else if (a.getIdentification() == 'v') {
+                VirtualAction av = (VirtualAction) a;
+                av.run(msp, managerGesture);
+            } else {
+                System.out.println("Problems in time to object identification");
+            }
+        }
     }
 
     public void Finalize(Point3D pHand, Point3D pRBody, ScreenPanel1 scp) {
@@ -107,6 +156,22 @@ public class ManagerImage {
         try {
             NewShape ns = new NewShape(img.getImage(type), scp, (int) img.getPoint(0).getX(), (int) img.getPoint(1).getX(), (int) img.getPoint(0).getY(), (int) img.getPoint(1).getY(), img.getIdentification());
             scp.addLayerShape(ns);
+            if (type != testType) {
+                if (type == 'S') {
+                    if (((Vector) table.get(img.getIdentification() + "Selected")).get(0) != null) {
+                        Vector actionS = (Vector) table.get(img.getIdentification() + "Selected");
+                        this.run(actionS);
+                    }
+                } else if (type == 'C') {
+                    if (((Vector) table.get(img.getIdentification() + "Clicked")).get(0) != null) {
+                        Vector actionC = (Vector) table.get(img.getIdentification() + "Clicked");
+                        this.run(actionC);
+                    }
+                } else if (type != 'N') {
+                    System.out.println("Error: Run action");
+                }
+                testType = type;
+            }
         } catch (Exception ex) {
             System.out.println("error: Finalize");
         }

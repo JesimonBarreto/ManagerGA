@@ -1,5 +1,5 @@
 
-package Manager.Gesture.Action;
+package Manager.Action;
 
 /**
  *

@@ -1,11 +1,11 @@
 package Manager.Gesture.Man;
 
 import Manager.Gesture.Ges.Gesture;
-import Manager.Gesture.Action.ActionReal;
-import Manager.Gesture.Action.VirtualAction;
-import Manager.Gesture.Action.Action;
-import Manager.Gesture.Arduino.PortControl;
-import Manager.Gesture.Panel.MyscreenPanel;
+import Manager.Action.ActionReal;
+import Manager.Action.VirtualAction;
+import Manager.Action.Action;
+import Manager.Arduino.PortControl;
+import Manager.Panel.MyscreenPanel;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 import java.util.ArrayList;
 import java.util.Vector;
@@ -31,11 +31,10 @@ public class ManagerGA {
     private boolean reading = false;
     private ArrayList<Gesture> Gestures = new ArrayList();
 
-    public void addGestures(Gesture recognizer) {
-        this.Gestures.add(recognizer);
-        String nameClass = recognizer.getNameClass();
+    public void addGestures(Gesture gesture) {
+        this.Gestures.add(gesture);
         Vector actions = new Vector();
-        hs.put(nameClass, actions);
+        hs.put(gesture.getNameClass(), actions);
     }
 
     public void StartConectionArduino() {

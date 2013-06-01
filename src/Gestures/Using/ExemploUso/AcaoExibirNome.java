@@ -1,8 +1,8 @@
 package Gestures.Using.ExemploUso;
 
-import Manager.Gesture.Action.VirtualAction;
+import Manager.Action.VirtualAction;
 import Manager.Gesture.Man.ManagerGA;
-import Manager.Gesture.Panel.MyscreenPanel;
+import Manager.Panel.MyscreenPanel;
 
 /**
  *

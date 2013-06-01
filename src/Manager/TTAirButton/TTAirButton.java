@@ -43,16 +43,16 @@ public class TTAirButton {
         return coordinate[i];
     }
 
-    public BufferedImage getImage(String iD) {
+    public BufferedImage getImage(char iD) {
         int i;
         switch (iD) {
-            case "N":
+            case 'N':
                 i = 0;
                 break;
-            case "S":
+            case 'S':
                 i = 1;
                 break;
-            case "C":
+            case 'C':
                 i = 2;
                 break;
             default:

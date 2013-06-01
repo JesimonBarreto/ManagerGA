@@ -5,9 +5,9 @@
 
 package Manager.Gesture.GesturesStandards;
 
-import Manager.Gesture.Action.VirtualAction;
+import Manager.Action.VirtualAction;
 import Manager.Gesture.Ges.Gesture;
-import Manager.Gesture.Panel.MyscreenPanel;
+import Manager.Panel.MyscreenPanel;
 import org.OpenNI.Point3D;
 
 

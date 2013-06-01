@@ -5,8 +5,8 @@
 package Gestures.Using.ExampleUse;
 
 import Manager.Gesture.Man.ManagerGA;
-import Manager.Gesture.Panel.MyscreenPanel;
-import Manager.Gesture.Panel.NewShape;
+import Manager.Panel.MyscreenPanel;
+import Manager.Panel.NewShape;
 import java.awt.Graphics;
 import java.util.Vector;
 import org.OpenNI.Point3D;

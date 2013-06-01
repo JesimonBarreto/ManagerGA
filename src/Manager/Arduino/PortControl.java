@@ -1,4 +1,4 @@
-package Manager.Gesture.Arduino;
+package Manager.Arduino;
 
 import gnu.io.CommPortIdentifier;
 import gnu.io.NoSuchPortException;

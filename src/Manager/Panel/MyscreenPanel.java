@@ -1,4 +1,4 @@
-package Manager.Gesture.Panel;
+package Manager.Panel;
 
 import Manager.Gesture.Man.ManagerGA;
 import java.awt.Graphics;

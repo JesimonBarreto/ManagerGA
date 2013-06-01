@@ -4,14 +4,14 @@
  */
 package Gestures.Using.ExampleUse;
 
-import Manager.Gesture.Action.VirtualAction;
+import Manager.Action.VirtualAction;
 import Manager.Gesture.GesturesStandards.Center;
 import Manager.Gesture.GesturesStandards.Down;
 import Manager.Gesture.GesturesStandards.Left;
 import Manager.Gesture.GesturesStandards.Right;
 import Manager.Gesture.GesturesStandards.Up;
 import Manager.Gesture.Man.ManagerGA;
-import Manager.Gesture.Panel.MyscreenPanel;
+import Manager.Panel.MyscreenPanel;
 
 /**
  *

@@ -3,7 +3,7 @@ package Gestures.Using.ExemploUso;
 import Manager.Gesture.GesturesStandards.HandsBackwards;
 import Manager.Gesture.GesturesStandards.HandsUp;
 import Manager.Gesture.Man.ManagerGA;
-import Manager.Gesture.Panel.NewShape;
+import Manager.Panel.NewShape;
 import java.awt.Graphics;
 import java.util.Vector;
 import org.OpenNI.Point3D;
@@ -17,7 +17,7 @@ import presentation.impl.KinectMotionCapture.KinectControl.SkeletonBone;
  * @author JB
  */
 //Criando classe 'MyscreenPanel' classe onde vai ficar responsável por enviar os dados para o gerente
-public final class MyscreenPanel extends Manager.Gesture.Panel.MyscreenPanel {
+public final class MyscreenPanel extends Manager.Panel.MyscreenPanel {
 
     public MyscreenPanel() {
         //Para que os gestos e as ações sejam adicionadas antes da execução

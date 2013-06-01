@@ -1,7 +1,7 @@
-package Manager.Gesture.Action;
+package Manager.Action;
 
 import Manager.Gesture.Man.ManagerGA;
-import Manager.Gesture.Panel.MyscreenPanel;
+import Manager.Panel.MyscreenPanel;
 /**
  *
  * @author JB
