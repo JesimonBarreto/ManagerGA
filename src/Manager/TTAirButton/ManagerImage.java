@@ -46,17 +46,16 @@ public class ManagerImage {
 
     public void addTTAirButton(TTAirButton button) {
         buttons.add(button);
-        Vector actionS = new Vector();
-        Vector actionC = new Vector();
-        table.put(button.getIdentification() + "Selected", actionS);
-        table.put(button.getImage('N'), actionC);
+        Vector action = new Vector();
+        table.put(button.getIdentification() + "Selected", action);
+        table.put(button.getIdentification(), action);
     }
 
     public void addActionButton(TTAirButton button, String stateButton, Action action) {
         if (stateButton.equals("Selected")) {
             ((Vector) table.get(button.getIdentification() + "Selected")).add(action);
         } else if (stateButton.equals("Clicked")) {
-            ((Vector) table.get(button.getImage('N'))).add(action);
+            ((Vector) table.get(button.getIdentification())).add(action);
         } else {
             System.out.println("Erro: Add Action");
         }
