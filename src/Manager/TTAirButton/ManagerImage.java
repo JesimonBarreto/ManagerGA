@@ -9,7 +9,6 @@ import Manager.Arduino.PortControl;
 import Manager.Gesture.Man.ManagerGA;
 import Manager.Panel.MyscreenPanel;
 import Manager.Panel.NewShape;
-import TTAirButton.Using.ExemploUso.ScreenPanel1;
 import java.awt.Point;
 import java.util.*;
 import org.OpenNI.Point3D;
@@ -143,7 +142,7 @@ public class ManagerImage {
         }
     }
 
-    public void Finalize(Point3D pHand, Point3D pRBody, ScreenPanel1 scp) {
+    public void Finalize(Point3D pHand, Point3D pRBody, MyscreenPanel scp) {
         TTAirButton img = this.searchImage(pHand, pRBody);
         scp.removeShape(img.getIdentification());
         try {

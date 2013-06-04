@@ -3,6 +3,9 @@ package Gestures.Using.ExemploUso;
 import Manager.Action.VirtualAction;
 import Manager.Gesture.Man.ManagerGA;
 import Manager.Panel.MyscreenPanel;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 
 /**
  *
