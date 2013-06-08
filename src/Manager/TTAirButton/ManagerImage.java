@@ -45,8 +45,8 @@ public class ManagerImage {
 
     public void addTTAirButton(TTAirButton button) {
         buttons.add(button);
-        Vector action = new Vector();
-        table.put(button.getIdentification(), action);
+        Vector actions = new Vector();
+        table.put(button.getIdentification(), actions);
     }
 
     public void addActionButton(TTAirButton button, Action action) {
@@ -61,14 +61,14 @@ public class ManagerImage {
         } catch (Exception erro) {
             System.out.println("error: Insert Image");
         }/* finally {
-            try {
-                files.DeleteFile(files.newFile("N" + identification + ".png"));
-                files.DeleteFile(files.newFile("S" + identification + ".png"));
-                files.DeleteFile(files.newFile("C" + identification + ".png"));
-            } catch (Exception e) {
-                System.out.println("Erro: delete Image");
-            }
-        }*/
+         try {
+         files.DeleteFile(files.newFile("N" + identification + ".png"));
+         files.DeleteFile(files.newFile("S" + identification + ".png"));
+         files.DeleteFile(files.newFile("C" + identification + ".png"));
+         } catch (Exception e) {
+         System.out.println("Erro: delete Image");
+         }
+         }*/
 
     }
 
@@ -86,9 +86,9 @@ public class ManagerImage {
     public void addImages() {
         try {
             for (int i = 0; i < buttons.size(); i++) {
-                TTAirButton image = (TTAirButton) buttons.get(i);
-                if (!image.isInsertedPicture() && this.getFiles().imageExist(image.getIdentification())) {
-                    this.insertImage(image.getIdentification(), i);
+                TTAirButton button = (TTAirButton) buttons.get(i);
+                if (!button.isInsertedPicture()) {
+                    this.insertImage(button.getIdentification(), i);
                 }
             }
         } catch (Exception e) {
