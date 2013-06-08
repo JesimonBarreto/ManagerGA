@@ -91,7 +91,7 @@ public class ManagerImage {
 
     public boolean Click(int handZ, int neckZ) {
         boolean click = false;
-        if (neckZ - handZ > 450) {
+        if (neckZ - handZ > 400) {
             click = true;
         }
         return click;
@@ -99,7 +99,6 @@ public class ManagerImage {
 
     public void Finalize(Point3D pHand, Point3D pRBody, MyscreenPanel scp) {
         this.addImages();
-
         boolean click = this.Click((int) pHand.getZ(), (int) pRBody.getZ());
         Point point = new Point((int) pHand.getX(), (int) pHand.getY());
         for (int i = 0; i < buttons.size(); i++) {

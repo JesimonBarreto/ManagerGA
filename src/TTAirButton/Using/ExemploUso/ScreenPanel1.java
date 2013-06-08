@@ -53,8 +53,8 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
 
     public void SelectingImage() {
         TTAirButton ti = new TTAirButton();
-        ti.setPoint(100, 100, 0);
-        ti.setPoint(300, 300, 1);
+        ti.setPoint(50, 100, 0);
+        ti.setPoint(250, 300, 1);
         ti.setIdentification("baixo");
         mi.addTTAirButton(ti);
         DisplayName sn = new DisplayName();
@@ -64,13 +64,11 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
         sn2.setImageAction("Clicked");
         mi.addActionButton(ti, sn2);
         TTAirButton nti = new TTAirButton();
-        nti.setPoint(400, 100, 0);
-        nti.setPoint(600, 300, 1);
+        nti.setPoint(350, 100, 0);
+        nti.setPoint(550, 300, 1);
         nti.setIdentification("cima");
         mi.addTTAirButton(nti);
-        sn.setImageAction("Selected");
         mi.addActionButton(nti, sn);
-        sn2.setImageAction("Clicked");
         mi.addActionButton(nti, sn2);
     }
 
@@ -95,7 +93,7 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
 
                 hand3d = new Point3D(handX, handY, handZ);
                 neck3d = new Point3D(neckX, neckY, neckZ);
-                mi.Finalize(hand3d, hand3d, this);
+                mi.Finalize(hand3d, neck3d, this);
 
             } catch (Exception ex) {
             }
