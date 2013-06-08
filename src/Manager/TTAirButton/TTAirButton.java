@@ -17,6 +17,15 @@ public class TTAirButton {
     private BufferedImage[] image = new BufferedImage[3];
     private String identification;
     private boolean insertedPicture = false;
+    private char type;
+
+    public char getType() {
+        return type;
+    }
+
+    public void setType(char type) {
+        this.type = type;
+    }
 
     public boolean isInsertedPicture() {
         return insertedPicture;
@@ -68,13 +77,13 @@ public class TTAirButton {
     }
 
     public boolean Contain(Point ponto) {
-        boolean contem = false;
+        boolean contain = false;
 
         if (ponto.getX() > this.getPoint(0).x && ponto.getY() > this.getPoint(0).y) {
             if (ponto.getX() < (this.getPoint(0).x + (this.getPoint(1).x - this.getPoint(0).x)) && ponto.getY() < (this.getPoint(0).y + (this.getPoint(1).y - this.getPoint(0).y))) {
-                contem = true;
+                contain = true;
             }
         }
-        return contem;
+        return contain;
     }
 }

@@ -20,7 +20,7 @@ public class ConverterToBuffer {
         try {
             File file = new File(fileName);
             image[i] = ImageIO.read(file);
-            file.deleteOnExit();
+            file.delete();
         } catch (Exception erro) {
             System.out.println("error: conversion");
         }

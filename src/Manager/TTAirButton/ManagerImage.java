@@ -25,7 +25,6 @@ public class ManagerImage {
     private Hashtable table = new Hashtable();
     private ConverterToBuffer converterTB = new ConverterToBuffer();
     private MyFile files = new MyFile();
-    private char type, testType;
     private ManagerGA managerGesture = new ManagerGA(msp);
 
     public Vector getImages() {
@@ -80,10 +79,12 @@ public class ManagerImage {
                 TTAirButton button = (TTAirButton) buttons.get(i);
                 if (!button.isInsertedPicture()) {
                     this.insertImage(button.getIdentification(), i);
+                    NewShape ns = new NewShape(button.getImage('N'), msp, button.getPoint(0).x, button.getPoint(1).x, button.getPoint(0).y, button.getPoint(1).y, button.getIdentification());
+                    msp.addLayerShape(ns);
                 }
             }
         } catch (Exception e) {
-            System.out.println("error: Add Image");
+            System.out.println("Error: Add Image");
         }
 
     }
@@ -96,24 +97,28 @@ public class ManagerImage {
         return click;
     }
 
-    private TTAirButton searchImage(Point3D pHand, Point3D pRBody) {
+    public void Finalize(Point3D pHand, Point3D pRBody, MyscreenPanel scp) {
+        this.addImages();
+
         boolean click = this.Click((int) pHand.getZ(), (int) pRBody.getZ());
         Point point = new Point((int) pHand.getX(), (int) pHand.getY());
-        TTAirButton image = null;
         for (int i = 0; i < buttons.size(); i++) {
             TTAirButton imageT = (TTAirButton) buttons.get(i);
             if (imageT.Contain(point) && click) {
-                image = imageT;
-                type = 'C';
+                if (imageT.getType() != 'C') {
+                    this.Clicked(i, scp);
+                }
             } else if (imageT.Contain(point) && !click) {
-                image = imageT;
-                type = 'S';
-            } else if (image == null && i == buttons.size() - 1) {
-                image = imageT;
-                type = 'N';
+                if (imageT.getType() != 'S') {
+                    this.Selected(i, scp);
+                }
+            } else if (!imageT.Contain(point) && !click) {
+                if (imageT.getType() != 'N') {
+                    this.backNormal(i, scp);
+                }
             }
+
         }
-        return image;
     }
 
     public void run(Vector vAction, String state) {
@@ -143,30 +148,49 @@ public class ManagerImage {
         }
     }
 
-    public void Finalize(Point3D pHand, Point3D pRBody, MyscreenPanel scp) {
-        TTAirButton img = this.searchImage(pHand, pRBody);
+    public void backNormal(int i, MyscreenPanel scp) {
         try {
-            if (type != testType) {
-                scp.removeShape(img.getIdentification());
-                NewShape ns = new NewShape(img.getImage(type), scp, (int) img.getPoint(0).getX(), (int) img.getPoint(1).getX(), (int) img.getPoint(0).getY(), (int) img.getPoint(1).getY(), img.getIdentification());
-                scp.addLayerShape(ns);
-                if (type == 'S') {
-                    if (((Vector) table.get(img.getIdentification())).get(0) != null) {
-                        Vector actionS = (Vector) table.get(img.getIdentification());
-                        this.run(actionS, "Selected");
-                    }
-                } else if (type == 'C') {
-                    if (((Vector) table.get(img.getIdentification())).get(0) != null) {
-                        Vector actionC = (Vector) table.get(img.getIdentification());
-                        this.run(actionC, "Clicked");
-                    }
-                } else if (type != 'N') {
-                    System.out.println("Error: Run action");
-                }
-                testType = type;
-            }
-        } catch (Exception ex) {
-            System.out.println("error: Finalize");
+            ((TTAirButton) buttons.get(i)).setType('N');
+            TTAirButton button = ((TTAirButton) buttons.get(i));
+            scp.removeShape(button.getIdentification());
+            NewShape ns = new NewShape(button.getImage('N'), scp, (int) button.getPoint(0).getX(), (int) button.getPoint(1).getX(), (int) button.getPoint(0).getY(), (int) button.getPoint(1).getY(), button.getIdentification());
+            scp.addLayerShape(ns);
+        } catch (Exception e) {
+            System.out.println("Error: BackNormal");
         }
+    }
+
+    public void Selected(int i, MyscreenPanel scp) {
+        try {
+            ((TTAirButton) buttons.get(i)).setType('S');
+            TTAirButton button = ((TTAirButton) buttons.get(i));
+            scp.removeShape(button.getIdentification());
+            NewShape ns = new NewShape(button.getImage('S'), scp, (int) button.getPoint(0).getX(), (int) button.getPoint(1).getX(), (int) button.getPoint(0).getY(), (int) button.getPoint(1).getY(), button.getIdentification());
+            scp.addLayerShape(ns);
+            if (((Vector) table.get(button.getIdentification())).get(0) != null) {
+                Vector actionS = (Vector) table.get(button.getIdentification());
+                this.run(actionS, "Selected");
+            }
+        } catch (Exception e) {
+            System.out.println("Error: Selected");
+        }
+
+    }
+
+    public void Clicked(int i, MyscreenPanel scp) {
+        try {
+            ((TTAirButton) buttons.get(i)).setType('C');
+            TTAirButton button = ((TTAirButton) buttons.get(i));
+            scp.removeShape(button.getIdentification());
+            NewShape ns = new NewShape(button.getImage('C'), scp, (int) button.getPoint(0).getX(), (int) button.getPoint(1).getX(), (int) button.getPoint(0).getY(), (int) button.getPoint(1).getY(), button.getIdentification());
+            scp.addLayerShape(ns);
+            if (((Vector) table.get(button.getIdentification())).get(0) != null) {
+                Vector actionC = (Vector) table.get(button.getIdentification());
+                this.run(actionC, "Clicked");
+            }
+        } catch (Exception e) {
+            System.out.println("Error: Clicked");
+        }
+
     }
 }
