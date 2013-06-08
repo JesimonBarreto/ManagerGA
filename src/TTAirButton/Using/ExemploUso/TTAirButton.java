@@ -13,7 +13,7 @@ import presentation.impl.KinectMotionCapture.layers.LayerRGB;
  *
  * @author JB
  */
-public class TTAirImage {
+public class TTAirButton {
 
     /**
      * @param args the command line arguments
