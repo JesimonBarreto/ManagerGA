@@ -60,16 +60,7 @@ public class ManagerImage {
             ((TTAirButton) buttons.get(i)).setInsertedPicture(true);
         } catch (Exception erro) {
             System.out.println("error: Insert Image");
-        }/* finally {
-         try {
-         files.DeleteFile(files.newFile("N" + identification + ".png"));
-         files.DeleteFile(files.newFile("S" + identification + ".png"));
-         files.DeleteFile(files.newFile("C" + identification + ".png"));
-         } catch (Exception e) {
-         System.out.println("Erro: delete Image");
-         }
-         }*/
-
+        }
     }
 
     public TTAirButton getImage(String iD) {
@@ -154,11 +145,11 @@ public class ManagerImage {
 
     public void Finalize(Point3D pHand, Point3D pRBody, MyscreenPanel scp) {
         TTAirButton img = this.searchImage(pHand, pRBody);
-        scp.removeShape(img.getIdentification());
         try {
-            NewShape ns = new NewShape(img.getImage(type), scp, (int) img.getPoint(0).getX(), (int) img.getPoint(1).getX(), (int) img.getPoint(0).getY(), (int) img.getPoint(1).getY(), img.getIdentification());
-            scp.addLayerShape(ns);
             if (type != testType) {
+                scp.removeShape(img.getIdentification());
+                NewShape ns = new NewShape(img.getImage(type), scp, (int) img.getPoint(0).getX(), (int) img.getPoint(1).getX(), (int) img.getPoint(0).getY(), (int) img.getPoint(1).getY(), img.getIdentification());
+                scp.addLayerShape(ns);
                 if (type == 'S') {
                     if (((Vector) table.get(img.getIdentification())).get(0) != null) {
                         Vector actionS = (Vector) table.get(img.getIdentification());

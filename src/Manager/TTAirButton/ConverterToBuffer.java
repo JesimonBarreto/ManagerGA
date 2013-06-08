@@ -18,19 +18,21 @@ public class ConverterToBuffer {
 
     private void LoadImage(String fileName, int i) {
         try {
-            image[i] = ImageIO.read(new File(fileName));
+            File file = new File(fileName);
+            image[i] = ImageIO.read(file);
+            file.deleteOnExit();
         } catch (Exception erro) {
             System.out.println("error: conversion");
         }
     }
 
     public BufferedImage[] conversion(String nameImage, MyFile files) {
-        String newimage = files.getDir().getPath() + "/N" + nameImage + ".png";
-        LoadImage(newimage, 0);
-        newimage = files.getDir().getPath() + "/S" + nameImage + ".png";
-        LoadImage(newimage, 1);
-        newimage = files.getDir().getPath() + "/C" + nameImage + ".png";
-        LoadImage(newimage, 2);
+        String newImage = files.getDir().getPath() + "/N" + nameImage + ".png";
+        LoadImage(newImage, 0);
+        newImage = files.getDir().getPath() + "/S" + nameImage + ".png";
+        LoadImage(newImage, 1);
+        newImage = files.getDir().getPath() + "/C" + nameImage + ".png";
+        LoadImage(newImage, 2);
 
         return image;
     }

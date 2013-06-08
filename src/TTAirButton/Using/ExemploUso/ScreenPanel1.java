@@ -54,7 +54,7 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
     public void SelectingImage() {
         TTAirButton ti = new TTAirButton();
         ti.setPoint(10, 100, 0);
-        ti.setPoint(5, 300, 1);
+        ti.setPoint(350, 300, 1);
         ti.setIdentification("baixo");
         mi.addTTAirButton(ti);
         DisplayName sn = new DisplayName();
