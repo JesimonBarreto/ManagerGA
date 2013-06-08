@@ -55,11 +55,21 @@ public class ManagerImage {
 
     public void insertImage(String identification, int i) {
         try {
+            files.extractZip(identification);
             ((TTAirButton) buttons.get(i)).setImage(converterTB.conversion(identification, files));
             ((TTAirButton) buttons.get(i)).setInsertedPicture(true);
         } catch (Exception erro) {
             System.out.println("error: Insert Image");
-        }
+        }/* finally {
+            try {
+                files.DeleteFile(files.newFile("N" + identification + ".png"));
+                files.DeleteFile(files.newFile("S" + identification + ".png"));
+                files.DeleteFile(files.newFile("C" + identification + ".png"));
+            } catch (Exception e) {
+                System.out.println("Erro: delete Image");
+            }
+        }*/
+
     }
 
     public TTAirButton getImage(String iD) {
