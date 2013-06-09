@@ -22,8 +22,8 @@ public class RobotT extends VirtualAction {
         Robot r;
         try {
             r = new Robot();
-            r.keyPress(KeyEvent.VK_KP_RIGHT);
-            r.keyRelease(KeyEvent.VK_KP_RIGHT);
+            r.keyPress(KeyEvent.VK_RIGHT);
+            r.keyRelease(KeyEvent.VK_RIGHT);
         } catch (AWTException ex) {
             System.out.println("erro");
         }
