@@ -25,7 +25,6 @@ public class DisplayName extends VirtualAction {
             r.keyPress(KeyEvent.VK_LEFT);
             r.keyRelease(KeyEvent.VK_LEFT);
         } catch (AWTException ex) {
-            System.out.println("NADA");
         }
     }
 }
