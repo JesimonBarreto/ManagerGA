@@ -23,10 +23,8 @@ public class DisplayName2 extends VirtualAction {
         Robot r;
         try {
             r = new Robot();
-            r.keyPress(KeyEvent.VK_WINDOWS);
-            r.keyPress(KeyEvent.VK_E);
-            r.keyRelease(KeyEvent.VK_WINDOWS);
-            r.keyRelease(KeyEvent.VK_E);
+            r.keyPress(KeyEvent.VK_RIGHT);
+            r.keyRelease(KeyEvent.VK_RIGHT);
         } catch (AWTException ex) {
             System.out.println("NADA");
         }
