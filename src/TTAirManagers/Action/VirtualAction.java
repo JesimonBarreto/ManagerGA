@@ -1,7 +1,7 @@
-package Manager.Action;
+package TTAirManagers.Action;
 
-import Manager.Gesture.Man.ManagerGA;
-import Manager.Panel.MyscreenPanel;
+import TTAirManagers.Gesture.Man.ManagerGA;
+import TTAirManagers.Panel.MyscreenPanel;
 /**
  *
  * @author JB

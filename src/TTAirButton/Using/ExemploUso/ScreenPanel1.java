@@ -1,8 +1,8 @@
 package TTAirButton.Using.ExemploUso;
 
-import Manager.Panel.NewShape;
-import Manager.TTAirButton.ManagerImage;
-import Manager.TTAirButton.TTAirButton;
+import TTAirManagers.Panel.NewShape;
+import TTAirManagers.TTAirButton.ManagerImage;
+import TTAirManagers.TTAirButton.TTAirButton;
 import java.awt.Graphics;
 import java.util.Vector;
 import org.OpenNI.Point3D;
@@ -15,7 +15,7 @@ import presentation.impl.KinectMotionCapture.KinectControl.SkeletonBone;
  *
  * @author JB
  */
-public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
+public final class ScreenPanel1 extends TTAirManagers.Panel.MyscreenPanel {
 
     private Vector shapes = new Vector();
     private ManagerImage mi = new ManagerImage(this);

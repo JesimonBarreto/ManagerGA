@@ -1,6 +1,6 @@
-package Manager.Panel;
+package TTAirManagers.Panel;
 
-import Manager.Gesture.Man.ManagerGA;
+import TTAirManagers.Gesture.Man.ManagerGA;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;

@@ -1,11 +1,11 @@
-package Manager.Gesture.Man;
+package TTAirManagers.Gesture.Man;
 
-import Manager.Gesture.Ges.Gesture;
-import Manager.Action.ActionReal;
-import Manager.Action.VirtualAction;
-import Manager.Action.Action;
-import Manager.Arduino.PortControl;
-import Manager.Panel.MyscreenPanel;
+import TTAirManagers.Gesture.Ges.Gesture;
+import TTAirManagers.Action.ActionReal;
+import TTAirManagers.Action.VirtualAction;
+import TTAirManagers.Action.Action;
+import TTAirManagers.Arduino.PortControl;
+import TTAirManagers.Panel.MyscreenPanel;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.Hashtable;
 import java.util.ArrayList;
 import java.util.Vector;

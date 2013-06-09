@@ -3,11 +3,11 @@
  * and open the template in the editor.
  */
 
-package Manager.Gesture.GesturesStandards;
+package TTAirManagers.Gesture.GesturesStandards;
 
-import Manager.Action.VirtualAction;
-import Manager.Gesture.Ges.Gesture;
-import Manager.Panel.MyscreenPanel;
+import TTAirManagers.Action.VirtualAction;
+import TTAirManagers.Gesture.Ges.Gesture;
+import TTAirManagers.Panel.MyscreenPanel;
 import org.OpenNI.Point3D;
 
 

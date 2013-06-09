@@ -2,13 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Manager.TTAirButton;
+package TTAirManagers.TTAirButton;
 
-import Manager.Action.*;
-import Manager.Arduino.PortControl;
-import Manager.Gesture.Man.ManagerGA;
-import Manager.Panel.MyscreenPanel;
-import Manager.Panel.NewShape;
+import TTAirManagers.Action.ActionReal;
+import TTAirManagers.Action.Action;
+import TTAirManagers.Action.VirtualAction;
+import TTAirManagers.Arduino.PortControl;
+import TTAirManagers.Gesture.Man.ManagerGA;
+import TTAirManagers.Panel.MyscreenPanel;
+import TTAirManagers.Panel.NewShape;
 import java.awt.Point;
 import java.util.*;
 import org.OpenNI.Point3D;

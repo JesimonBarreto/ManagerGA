@@ -4,7 +4,7 @@
  */
 package Gestures.Using.ExampleUse;
 
-import Manager.Gesture.Ges.Gesture;
+import TTAirManagers.Gesture.Ges.Gesture;
 import org.OpenNI.Point3D;
 
 /**

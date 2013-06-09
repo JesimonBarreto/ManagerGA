@@ -4,14 +4,14 @@
  */
 package Gestures.Using.ExampleUse;
 
-import Manager.Action.VirtualAction;
-import Manager.Gesture.GesturesStandards.Center;
-import Manager.Gesture.GesturesStandards.Down;
-import Manager.Gesture.GesturesStandards.Left;
-import Manager.Gesture.GesturesStandards.Right;
-import Manager.Gesture.GesturesStandards.Up;
-import Manager.Gesture.Man.ManagerGA;
-import Manager.Panel.MyscreenPanel;
+import TTAirManagers.Action.VirtualAction;
+import TTAirManagers.Gesture.GesturesStandards.Center;
+import TTAirManagers.Gesture.GesturesStandards.Down;
+import TTAirManagers.Gesture.GesturesStandards.Left;
+import TTAirManagers.Gesture.GesturesStandards.Right;
+import TTAirManagers.Gesture.GesturesStandards.Up;
+import TTAirManagers.Gesture.Man.ManagerGA;
+import TTAirManagers.Panel.MyscreenPanel;
 
 /**
  *

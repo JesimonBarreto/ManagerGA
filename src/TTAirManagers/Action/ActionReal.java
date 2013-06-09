@@ -1,7 +1,7 @@
-package Manager.Action;
+package TTAirManagers.Action;
 
-import Manager.Arduino.PortControl;
-import Manager.Panel.MyscreenPanel;
+import TTAirManagers.Arduino.PortControl;
+import TTAirManagers.Panel.MyscreenPanel;
 
 /**
  *

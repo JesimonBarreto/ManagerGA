@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package Manager.TTAirButton;
+package TTAirManagers.TTAirButton;
 
 import java.io.*;
 import java.util.Enumeration;

@@ -4,9 +4,9 @@
  */
 package Gestures.Using.ExampleUse;
 
-import Manager.Gesture.Man.ManagerGA;
-import Manager.Panel.MyscreenPanel;
-import Manager.Panel.NewShape;
+import TTAirManagers.Gesture.Man.ManagerGA;
+import TTAirManagers.Panel.MyscreenPanel;
+import TTAirManagers.Panel.NewShape;
 import java.awt.Graphics;
 import java.util.Vector;
 import org.OpenNI.Point3D;
