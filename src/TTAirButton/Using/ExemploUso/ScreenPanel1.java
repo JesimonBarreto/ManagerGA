@@ -16,27 +16,27 @@ import presentation.impl.KinectMotionCapture.KinectControl.SkeletonBone;
  * @author JB
  */
 public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
-    
+
     private Vector shapes = new Vector();
     private ManagerImage mi = new ManagerImage(this);
     private int handX, handY, handZ, neckX, neckY, neckZ;
     private Point3D hand3d, neck3d;
-    
+
     public ScreenPanel1() throws Exception {
         super();
         this.SelectingImage();
     }
-    
+
     @Override
     public void addLayerShape(ALayerShape shape) {
         this.shapes.add(shape);
     }
-    
+
     @Override
     public void removerShape(int position) {
         this.shapes.remove(position);
     }
-    
+
     @Override
     public void removeShape(String name) {
         for (int i = 0; i < shapes.size(); i++) {
@@ -47,35 +47,29 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
                     this.removerShape(i);
                 }
             }
-            
+
         }
     }
-    
+
     public void SelectingImage() {
         TTAirButton ti = new TTAirButton();
         ti.setPoint(50, 100, 0);
         ti.setPoint(250, 300, 1);
         ti.setIdentification("baixo");
         mi.addTTAirButton(ti);
-        RobotL l = new RobotL();
-        l.setStateAction("Selected");
-        mi.addActionButton(ti, l);
-        /* DisplayName sn = new DisplayName();
-         sn.setStateAction("Selected");
-         mi.addActionButton(ti, sn);*/
-        /*DisplayName2 sn2 = new DisplayName2();
-         sn2.setStateAction("Selected");
-         mi.addActionButton(nti, sn2);*/
+        DisplayName sn = new DisplayName();
+        sn.setStateAction("Selected");
+        mi.addActionButton(ti, sn);
         TTAirButton nti = new TTAirButton();
         nti.setPoint(350, 100, 0);
         nti.setPoint(550, 300, 1);
         nti.setIdentification("cima");
         mi.addTTAirButton(nti);
-        RobotT ro = new RobotT();
-        ro.setStateAction("Selected");
-        mi.addActionButton(nti, ro);
+        DisplayName2 sn2 = new DisplayName2();
+        sn2.setStateAction("Selected");
+        mi.addActionButton(nti, sn2);
     }
-    
+
     @Override
     public void paint(Graphics g) {
         if (!shapes.isEmpty()) {
@@ -84,7 +78,7 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
                 ALayerShape shape = (ALayerShape) shapes.get(a);
                 shape.draw(g);
             }
-            
+
             SkeletonBone sb;
             try {
                 sb = KinectAccess.getSkeletonsBone();
@@ -94,16 +88,16 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
                 neckX = (int) sb.getBone(EBone.NECK).getJ2().getX();
                 neckY = (int) sb.getBone(EBone.NECK).getJ2().getY();
                 neckZ = (int) sb.getBone(EBone.NECK).getJ2().getZ();
-                
+
                 hand3d = new Point3D(handX, handY, handZ);
                 neck3d = new Point3D(neckX, neckY, neckZ);
                 mi.Finalize(hand3d, neck3d, this);
-                
+
             } catch (Exception ex) {
             }
-            
+
         }
         this.repaint();
-        
+
     }
 }
