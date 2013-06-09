@@ -13,13 +13,13 @@ import java.awt.event.KeyEvent;
 
 /**
  *
- * @author JB
+ * @author Geral
  */
-public class DisplayName extends VirtualAction {
+public class RobotT extends VirtualAction {
 
     @Override
     public void run(MyscreenPanel sp, ManagerGA gerente) {
-        Robot r; 
+        Robot r;
         try {
             r = new Robot();
             r.keyPress(KeyEvent.VK_WINDOWS);
@@ -27,7 +27,7 @@ public class DisplayName extends VirtualAction {
             r.keyRelease(KeyEvent.VK_WINDOWS);
             r.keyRelease(KeyEvent.VK_E);
         } catch (AWTException ex) {
-            System.out.println("NADA");
+            System.out.println("erro");
         }
     }
 }

@@ -20,11 +20,15 @@ public class DisplayName2 extends VirtualAction {
     @Override
     public void run(MyscreenPanel sp, ManagerGA gerente) {
         System.out.println("Selected");
+        Robot r;
         try {
-            Robot r = new Robot();
-            r.keyPress(KeyEvent.VK_KP_LEFT);
-            r.keyRelease(KeyEvent.VK_KP_LEFT);
+            r = new Robot();
+            r.keyPress(KeyEvent.VK_WINDOWS);
+            r.keyPress(KeyEvent.VK_E);
+            r.keyRelease(KeyEvent.VK_WINDOWS);
+            r.keyRelease(KeyEvent.VK_E);
         } catch (AWTException ex) {
+            System.out.println("NADA");
         }
 
     }
