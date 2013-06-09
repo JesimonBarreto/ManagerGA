@@ -15,15 +15,15 @@ import java.awt.event.KeyEvent;
  *
  * @author Geral
  */
-public class RobotT extends VirtualAction {
+public class RobotL extends VirtualAction {
 
     @Override
     public void run(MyscreenPanel sp, ManagerGA gerente) {
         Robot r;
         try {
             r = new Robot();
-            r.keyPress(KeyEvent.VK_KP_RIGHT);
-            r.keyRelease(KeyEvent.VK_KP_RIGHT);
+            r.keyPress(KeyEvent.VK_KP_LEFT);
+            r.keyRelease(KeyEvent.VK_KP_LEFT);
         } catch (AWTException ex) {
             System.out.println("erro");
         }

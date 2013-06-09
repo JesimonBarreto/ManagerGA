@@ -120,7 +120,7 @@ public class ManagerImage {
         }
     }
 
-    public void run(Vector vAction, String state) {
+    private void run(Vector vAction, String state) {
         for (int i = 0; i < vAction.size(); i++) {
             Action a = (Action) vAction.get(i);
             if (a.getStateAction().equals(state)) {
@@ -147,7 +147,7 @@ public class ManagerImage {
         }
     }
 
-    public void backNormal(int i, MyscreenPanel scp) {
+    private void backNormal(int i, MyscreenPanel scp) {
         try {
             ((TTAirButton) buttons.get(i)).setType('N');
             TTAirButton button = ((TTAirButton) buttons.get(i));
@@ -159,7 +159,7 @@ public class ManagerImage {
         }
     }
 
-    public void Selected(int i, MyscreenPanel scp) {
+    private void Selected(int i, MyscreenPanel scp) {
         try {
             ((TTAirButton) buttons.get(i)).setType('S');
             TTAirButton button = ((TTAirButton) buttons.get(i));
@@ -176,7 +176,7 @@ public class ManagerImage {
 
     }
 
-    public void Clicked(int i, MyscreenPanel scp) {
+    private void Clicked(int i, MyscreenPanel scp) {
         try {
             ((TTAirButton) buttons.get(i)).setType('C');
             TTAirButton button = ((TTAirButton) buttons.get(i));

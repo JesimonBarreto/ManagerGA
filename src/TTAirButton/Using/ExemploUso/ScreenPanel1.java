@@ -57,11 +57,15 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
         ti.setPoint(250, 300, 1);
         ti.setIdentification("baixo");
         mi.addTTAirButton(ti);
-        DisplayName sn = new DisplayName();
-        sn.setStateAction("Selected");
-        mi.addActionButton(ti, sn);
-        DisplayName2 sn2 = new DisplayName2();
-        sn2.setStateAction("Selected");
+        RobotL l = new RobotL();
+        l.setStateAction("Selected");
+        mi.addActionButton(ti, l);
+        /* DisplayName sn = new DisplayName();
+         sn.setStateAction("Selected");
+         mi.addActionButton(ti, sn);*/
+        /*DisplayName2 sn2 = new DisplayName2();
+         sn2.setStateAction("Selected");
+         mi.addActionButton(nti, sn2);*/
         TTAirButton nti = new TTAirButton();
         nti.setPoint(350, 100, 0);
         nti.setPoint(550, 300, 1);
@@ -70,7 +74,6 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
         RobotT ro = new RobotT();
         ro.setStateAction("Selected");
         mi.addActionButton(nti, ro);
-        //mi.addActionButton(nti, sn2);
     }
     
     @Override
