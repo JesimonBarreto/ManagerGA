@@ -7,14 +7,14 @@ package Manager.Action;
 public abstract class Action {
 
     private char identification;
-    private String imageAction;
+    private String stateAction;
 
-    public String getImageAction() {
-        return imageAction;
+    public String getStateAction() {
+        return stateAction;
     }
 
-    public void setImageAction(String imageAction) {
-        this.imageAction = imageAction;
+    public void setStateAction(String stateAction) {
+        this.stateAction = stateAction;
     }
 
     public char getIdentification() {

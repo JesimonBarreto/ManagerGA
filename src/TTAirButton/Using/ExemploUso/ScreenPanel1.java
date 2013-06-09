@@ -58,17 +58,15 @@ public final class ScreenPanel1 extends Manager.Panel.MyscreenPanel {
         ti.setIdentification("baixo");
         mi.addTTAirButton(ti);
         DisplayName sn = new DisplayName();
-        sn.setImageAction("Selected");
+        sn.setStateAction("Selected");
         mi.addActionButton(ti, sn);
         DisplayName2 sn2 = new DisplayName2();
-        sn2.setImageAction("Clicked");
-        mi.addActionButton(ti, sn2);
+        sn2.setStateAction("Selected");
         TTAirButton nti = new TTAirButton();
         nti.setPoint(350, 100, 0);
         nti.setPoint(550, 300, 1);
         nti.setIdentification("cima");
         mi.addTTAirButton(nti);
-        mi.addActionButton(nti, sn);
         mi.addActionButton(nti, sn2);
     }
 

@@ -7,6 +7,9 @@ package TTAirButton.Using.ExemploUso;
 import Manager.Action.VirtualAction;
 import Manager.Gesture.Man.ManagerGA;
 import Manager.Panel.MyscreenPanel;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -16,6 +19,13 @@ public class DisplayName2 extends VirtualAction {
 
     @Override
     public void run(MyscreenPanel sp, ManagerGA gerente) {
-        System.out.println("Cliked");
+        System.out.println("Selected");
+        try {
+            Robot r = new Robot();
+            r.keyPress(KeyEvent.VK_KP_LEFT);
+            r.keyRelease(KeyEvent.VK_KP_LEFT);
+        } catch (AWTException ex) {
+        }
+
     }
 }

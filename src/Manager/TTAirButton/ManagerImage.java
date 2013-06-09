@@ -123,7 +123,7 @@ public class ManagerImage {
     public void run(Vector vAction, String state) {
         for (int i = 0; i < vAction.size(); i++) {
             Action a = (Action) vAction.get(i);
-            if (a.getImageAction().equals(state)) {
+            if (a.getStateAction().equals(state)) {
                 if (a.getIdentification() == 'r') {
                     ActionReal ar = (ActionReal) a;
                     if (ar.isRuning() && ar.isActionDouble()) {
