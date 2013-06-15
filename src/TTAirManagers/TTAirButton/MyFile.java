@@ -65,8 +65,7 @@ public class MyFile {
         InputStream is = null;
         OutputStream os = null;
         byte[] buffer = new byte[2048];
-        try {
-            //cria diretório informado, caso não exista  
+        try { 
             if (!this.directoryExists()) {
                 dir.mkdirs();
             }
@@ -78,23 +77,19 @@ public class MyFile {
             while (e.hasMoreElements()) {
                 ZipEntry entrada = (ZipEntry) e.nextElement();
                 arquivo = new File(dir, entrada.getName());
-                //se for diretório inexistente, cria a estrutura   
-                //e pula pra próxima entrada  
                 if (entrada.isDirectory() && !arquivo.exists()) {
                     arquivo.mkdirs();
                     continue;
                 }
-                //se a estrutura de diretórios não existe, cria  
                 if (!arquivo.getParentFile().exists()) {
                     arquivo.getParentFile().mkdirs();
                 }
                 try {
-                    //lê o arquivo do zip e grava em disco  
                     is = zip.getInputStream(entrada);
                     os = new FileOutputStream(arquivo);
                     int bytesLidos = 0;
                     if (is == null) {
-                        throw new ZipException("Erro ao ler a entrada do zip: " + entrada.getName());
+                        throw new ZipException("Error imput reading zip: " + entrada.getName());
                     }
                     while ((bytesLidos = is.read(buffer)) > 0) {
                         os.write(buffer, 0, bytesLidos);
