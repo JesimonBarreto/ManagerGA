@@ -74,14 +74,6 @@ public final class ScreenPanel1 extends TTAirManagers.Panel.MyscreenPanel {
         sn.setStateAction("Selected");
         //Adicionando a ação ao managerButton, passando como parâmetro na primeira posição o objeto TTAirButton para que se destina a ação e na segunda posição o objeto ação.
         mi.addActionButton(ti, sn);
-        TTAirButton nti = new TTAirButton();
-        nti.setPoint(350, 100, 0);
-        nti.setPoint(550, 300, 1);
-        nti.setIdentification("cima");
-        mi.addTTAirButton(nti);
-        DisplayName2 sn2 = new DisplayName2();
-        sn2.setStateAction("Selected");
-        mi.addActionButton(nti, sn2);
     }
 
     @Override
