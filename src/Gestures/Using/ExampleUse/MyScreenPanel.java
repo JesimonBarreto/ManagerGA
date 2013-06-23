@@ -64,15 +64,13 @@ public class MyScreenPanel extends MyscreenPanel {
         // Creating object VirtualAction
         ActionShowsName aen = new ActionShowsName();
         //Adding to the manager. Doi will need values ​​for parameters, a string (class name gesture that will be associated with the action), the action object
-       /* gerente.addAction("NewGestureHandUp", aen);
+        gerente.addAction("NewGestureHandUp", aen);
         //Creating object ActionReal
         ActionArduino aa = new ActionArduino();
         //To activate double acting
         aa.setActionDouble(true);
         //Adding to the manager
-        gerente.addAction("NewGestureHandUp", aa);*/
-        AHandsBackwards ah=new AHandsBackwards();
-        gerente.addAction("NewGestureHandUp", ah);
+        gerente.addAction("NewGestureHandUp", aa);
     }
 
 //Abstract class' MyscreenPanel'tem substituirShape a method, passing the position that has to be removed and the new shape makes the method as a parameter substitution.
