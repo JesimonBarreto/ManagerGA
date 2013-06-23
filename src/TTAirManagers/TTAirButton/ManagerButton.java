@@ -19,7 +19,7 @@ import org.OpenNI.Point3D;
  *
  * @author JB
  */
-public class ManagerImage {
+public class ManagerButton {
 
     private PortControl cp = new PortControl();
     private MyscreenPanel msp = null;
@@ -37,7 +37,7 @@ public class ManagerImage {
         return files;
     }
 
-    public ManagerImage(MyscreenPanel msp) {
+    public ManagerButton(MyscreenPanel msp) {
         if (!files.directoryExists()) {
             files.createDirectory();
         }
