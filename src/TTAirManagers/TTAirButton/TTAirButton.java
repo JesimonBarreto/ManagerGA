@@ -80,7 +80,7 @@ public class TTAirButton {
         boolean contain = false;
 
         if (ponto.getX() > this.getPoint(0).x && ponto.getY() > this.getPoint(0).y) {
-            if (ponto.getX() < (this.getPoint(0).x + (this.getPoint(1).x - this.getPoint(0).x)) && ponto.getY() < (this.getPoint(0).y + (this.getPoint(1).y - this.getPoint(0).y))) {
+            if (ponto.getX() < ((this.getPoint(1).x)) && ponto.getY() < ((this.getPoint(1).y))) {
                 contain = true;
             }
         }
